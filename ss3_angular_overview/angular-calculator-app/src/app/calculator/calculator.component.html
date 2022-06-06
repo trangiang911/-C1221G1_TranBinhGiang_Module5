@@ -1,0 +1,34 @@
+<h2>Calculator</h2>
+<div>
+  <table id="table">
+    <tr>
+      <td colspan="5"><input id="result" type="text"></td>
+    </tr>
+    <tr>
+      <td><input type="button" name="bttn" value="7" (click)='so("7")')></td>
+      <td><input type="button" name="bttn" value="8" (click)='so("8")'></td>
+      <td><input type="button" name="bttn" value="9" (click)='so("9")'></td>
+      <td><input type="button" name="bttn" value="/" (click)='so("/")'></td>
+      <td><input type="button" name="bttn" value="AC" onclick="xoa()"></td>
+    </tr>
+    <tr>
+      <td><input type="button" name="bttn" value="4" (click)='so("4")'></td>
+      <td><input type="button" name="bttn" value="5" (click)='so("5")'></td>
+      <td><input type="button" name="bttn" value="6" (click)='so("6")'></td>
+      <td><input type="button" name="bttn" value="*" (click)= 'so("*")'></td>
+      <td><input type="button" name="bttn" value="C" onclick="xoahet()"></td>
+    </tr>
+    <tr>
+      <td><input type="button" name="bttn" value="1" (click)='so("1")'></td>
+      <td><input type="button" name="bttn" value="2" (click)='so("2")'></td>
+      <td><input type="button" name="bttn" value="3" (click)='so("3")'></td>
+      <td><input type="button" name="bttn" value="+" (click)='so("+")'></td>
+      <td><input type="button" name="bttn" value="=" (click)="bang()")></td>
+    </tr>
+    <tr>
+      <td><input type="button" name="bttn" value="0" (click)="so(this.value)"></td>
+      <td><input type="button" name="bttn" value="." (click)="so(this.value)"></td>
+      <td><input type="button" name="bttn" value="-" (click)="so(this.value)"></td>
+    </tr>
+  </table>
+</div>
