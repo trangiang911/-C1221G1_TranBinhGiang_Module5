@@ -17,4 +17,9 @@ export class CalculatorComponent implements OnInit {
     (document.getElementById('result') as HTMLInputElement).value=result+value
   }
 
- 
+  bang() {
+    let str=(document.getElementById('result')as HTMLInputElement).value;
+    let result=eval(str);
+    (document.getElementById('result') as HTMLInputElement).value=result
+  }
+}
