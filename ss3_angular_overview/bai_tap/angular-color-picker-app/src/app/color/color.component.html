@@ -1,8 +1,10 @@
 <p>Choose your monster's colors:</p>
 
 <div>
+<!--  <input type="color" id="head" name="head"-->
+<!--         value="#e66465" (change)="getColor()">-->
   <input type="color" id="head" name="head"
-         value="#e66465" (change)="getColor()">
+         value="#e66465" (change)="getColor($event.target.value)">
   <label for="head">Head</label>
 </div>
-<h1 style="color: {{color}}">{{color}}</h1>
+<h1 [ngStyle]="{color:color }">{{color}}</h1>

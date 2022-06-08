@@ -2,33 +2,67 @@
 <div>
   <table>
     <tr>
-      <td colspan="5"><input id="result" type="text"></td>
+      <td colspan="5"><input id="result" type="text" value="{{result}}"></td>
     </tr>
     <tr>
-      <td><button (click)='so("7")'>7</button></td>
-      <td><button (click)='so("8")'>8</button></td>
-      <td><button (click)='so("9")'>9</button></td>
-      <td><button (click)='so("/")'>/</button></td>
-      <td><button (click)='so("AC")'>AC</button></td>
+      <td>
+        <button (click)='so("7")'>7</button>
+      </td>
+      <td>
+        <button (click)='so("8")'>8</button>
+      </td>
+      <td>
+        <button (click)='so("9")'>9</button>
+      </td>
+      <td>
+        <button (click)='so("/")'>/</button>
+      </td>
+      <td>
+        <button (click)='removeAll()'>AC</button>
+      </td>
     </tr>
     <tr>
-      <td><input type="button" value="4" (click)='so("4")'></td>
-      <td><input type="button" value="5" (click)='so("5")'></td>
-      <td><input type="button" value="6" (click)='so("6")'></td>
-      <td><input type="button" value="*" (click)='so("*")'></td>
-<!--      <td><input type="button" value="C" ></td>-->
+      <td>
+        <button (click)='so("4")'>4</button>
+      </td>
+      <td>
+        <button (click)='so("5")'>5</button>
+      </td>
+      <td>
+        <button (click)='so("6")'>6</button>
+      </td>
+      <td>
+        <button (click)='so("*")'>*</button>
+      </td>
+      <td><button  value="C" (click)="remove()">C</button></td>
     </tr>
     <tr>
-      <td><input type="button" name="bttn" value="1" (click)='so("1")'></td>
-      <td><input type="button" name="bttn" value="2" (click)='so("2")'></td>
-      <td><input type="button" name="bttn" value="3" (click)='so("3")'></td>
-      <td><input type="button" name="bttn" value="+" (click)='so("+")'></td>
-      <td><button (click)="bang()">=</button></td>
+      <td>
+        <button value="1" (click)='so("1")'>1</button>
+      </td>
+      <td>
+        <button value="2" (click)='so("2")'>2</button>
+      </td>
+      <td>
+        <button value="3" (click)='so("3")'>3</button>
+      </td>
+      <td>
+        <button value="+" (click)='so("+")'>+</button>
+      </td>
+      <td>
+        <button (click)="bang()">=</button>
+      </td>
     </tr>
     <tr>
-      <td><input type="button" name="bttn" value="0" (click)='so("0")'></td>
-      <td><input type="button" name="bttn" value="." (click)='so(".")'></td>
-      <td><input type="button" name="bttn" value="-" (click)='so("-")'></td>
+      <td>
+        <button value="0" (click)='so("0")'>0</button>
+      </td>
+      <td>
+        <button value="." (click)='so(".")'>.</button>
+      </td>
+      <td>
+        <button value="-" (click)='so("-")'>-</button>
+      </td>
     </tr>
   </table>
 </div>

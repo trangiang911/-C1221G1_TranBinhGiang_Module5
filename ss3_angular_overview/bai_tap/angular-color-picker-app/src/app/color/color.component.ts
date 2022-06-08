@@ -11,8 +11,7 @@ export class ColorComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  getColor() {
-    let colorVal = (document.getElementById('head') as HTMLInputElement).value;
-    this.color = colorVal;
+  getColor(value) {
+    this.color = value;
   }
 }

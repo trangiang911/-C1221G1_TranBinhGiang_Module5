@@ -1,0 +1,41 @@
+body{
+  background-color: #a9bd7e;
+}
+table{
+  margin: auto;
+  background-color: #9dd2ea;
+  width: 295px;
+  height: 325px;
+  text-align: center;
+  border-radius: 4px;
+}
+button{
+  outline: 0;
+  position: relative;
+  left: 5px;
+  top: 5px;
+  border: 0;
+  color: #495069;
+  background-color: 4px;
+  width: 60px;
+  height: 50px;
+  float: left;
+  margin: 5px;
+  font-size: 20px;
+  box-shadow: 0 4px rgba(0,0,0,0.2);
+}
+#result{
+  width: 355px;
+  font-size: 35px;
+  text-align: center;
+  background-color: #f1faeb;
+  float: left;
+}
+/* answer hover effect */
+#result:hover{
+  width: 355px;
+  font-size: 35px;
+  text-align: center;
+  box-shadow: 0 4px rgba(0,0,0,0.2);
+  background-color: #f1faeb;
+}
