@@ -22,17 +22,23 @@ let rl = readline.createInterface({
 
 //cách làm bằng Array
 
-let arr:Array<number> = [0,1];
-let total:number=0;
-// let x:any;
-rl.question('enter count loop: ', (x:any) => {
-    for(let i:number = 1; i<=parseInt(x);i++){
-        arr[i+1]=arr[i]+arr[i-1];
-        total=arr[i]+arr[i+1];
+
+function totalFibonaci(answer:string){
+    let arr:Array<number> = [0,1];
+    let total:number=0;
+    for(let i:number = 0; i<=parseInt(answer)+1;i++){
+        if(i==0){
+            total+=arr[i]
+        }else{
+            arr[i+1]=arr[i]+arr[i-1];
+            total+=arr[i];
+        }
     }
     console.log(arr);
     console.log(total);
-});
+}
+
+rl.question('enter count loop: ', (x:any) => totalFibonaci(x));
 
 
 //để quy
@@ -44,7 +50,7 @@ rl.question('enter count loop: ', (x:any) => {
 // }
 // function getFibonaci(count:number):void{
 //     let total:number=0;
-//     for(let i:number=0;i<count;i++){
+//     for(let i:number=0;i<=count;i++){
 //         console.log(fibonaci(i))
 //         total+=fibonaci(i);
 //     }
