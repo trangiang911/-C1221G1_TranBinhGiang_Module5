@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "case-study": {
@@ -26,7 +26,22 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/jquery-3.2.1.min.js",
+              "src/assets/js/popper.js",
+              "src/assets/js/bootstrap.min.js",
+              "src/assets/vendors/owl-carousel/owl.carousel.min.js",
+              "src/assets/js/jquery.ajaxchimp.min.js",
+              "src/assets/js/mail-script.js",
+              "src/assets/vendors/bootstrap-datepicker/bootstrap-datetimepicker.min.js",
+              "src/assets/vendors/nice-select/js/jquery.nice-select.js",
+              "src/assets/js/mail-script.js",
+              "src/assets/js/stellar.js",
+              "src/assets/vendors/lightbox/simpleLightbox.min.js",
+              "src/assets/js/custom.js",
+              "src/assets/js/default-assets/card.js",
+              "src/assets/js/three-dot.js"
+            ]
           },
           "configurations": {
             "production": {

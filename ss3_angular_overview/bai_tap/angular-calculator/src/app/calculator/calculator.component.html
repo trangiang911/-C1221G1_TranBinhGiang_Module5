@@ -1,9 +1,9 @@
 <input type="number" #num1 [(ngModel)]="number1" placeholder="Nhập số thứ nhất">
 <input type="number" #num2 [(ngModel)]="number2" placeholder="Nhập số thứ hai">
 <hr>
-<button (click)="add()">+</button>
-<button (click)="sub()">-</button>
-<button (click)="multiply()">x</button>
-<button (click)="divide()">/</button>
+<input (click)="calculate($event.target.value)" type="button" value="+">
+<input (click)="calculate($event.target.value)" type="button" value="-">
+<input (click)="calculate($event.target.value)" type="button" value="x">
+<input (click)="calculate($event.target.value)" type="button" value="/">
 
 <h3>Kết quả là: {{result}}</h3>

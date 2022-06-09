@@ -28,11 +28,11 @@
           <div class="col-sm-9">
             <select id="facilityTypeId"
                     class="form-control"
-                    onchange="showFacilityType()">
+                    (change)="showFacility($event.target.value)">
               <option value="null">Select Facility type</option>
               <option value="1">Villa</option>
               <option value="2">House</option>
-              <option value="null">Room</option>
+              <option value="3">Room</option>
             </select>
           </div>
         </div>
@@ -81,7 +81,7 @@
           </div>
         </div>
         <!--                 House and Villa-->
-        <div id="villaAndHouseOnly">
+        <div id="villaAndHouseOnly" >
           <div class="form-group row">
             <label for="roomStandard" class="col-sm-3 col-form-label">Room standard</label>
             <div class="col-sm-9">
@@ -94,7 +94,7 @@
               <input type="text" class="form-control" id="description">
             </div>
           </div>
-          <div class="form-group row">
+          <div class="form-group row" [hidden]="!numberFloor">
             <label for="numberFloor" class="col-sm-3 col-form-label">Number of floor</label>
             <div class="col-sm-9">
               <input type="text" class="form-control" id="numberFloor">
@@ -102,7 +102,7 @@
           </div>
         </div>
         <!--                Villa-->
-        <div id="villaOnly">
+        <div id="villaOnly" [hidden]="!poolSquare">
           <div class="form-group row">
             <label for="poolSquare" class="col-sm-3 col-form-label">Pool square</label>
             <div class="col-sm-9">

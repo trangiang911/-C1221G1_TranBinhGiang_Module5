@@ -19,35 +19,23 @@ export class CalculatorComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  add() {
-    // const num1 = this.num1.nativeElement.value;
-    // const num2 = this.num2.nativeElement.value;
-    // this.result = parseInt(num1) + parseInt(num2);
-
-    this.result = this.number1 + this.number2;
-  }
-
-  sub() {
-    // const num1 = this.num1.nativeElement.value;
-    // const num2 = this.num2.nativeElement.value;
-    // this.result = parseInt(num1) - parseInt(num2);
-    this.result = this.number1 - this.number2;
-
-  }
-
-  multiply() {
-    // const num1 = this.num1.nativeElement.value;
-    // const num2 = this.num2.nativeElement.value;
-    // this.result = parseInt(num1) * parseInt(num2);
-    this.result = this.number1 * this.number2;
-
-  }
-
-  divide() {
-    // const num1 = this.num1.nativeElement.value;
-    // const num2 = this.num2.nativeElement.value;
-    // this.result = parseInt(num1) / parseInt(num2);
-    this.result = this.number1 / this.number2;
-
+  calculate(value: any) {
+    switch (value) {
+      case '+':
+        this.result = Number(this.num1.nativeElement.value) + Number(this.num2.nativeElement.value);
+        // this.result = this.number1 + this.number2;
+        break;
+      case '-':
+        this.result = this.number1 - this.number2;
+        break;
+      case 'x':
+        this.result = this.number1 * this.number2;
+        break;
+      case '/':
+        this.result = this.number1 / this.number2;
+        break;
+      default:
+        break;
+    }
   }
 }
