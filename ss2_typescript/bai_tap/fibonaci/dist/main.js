@@ -44,22 +44,22 @@ let rl = readline.createInterface({
 // }
 // fibonaci(20);
 //cách làm bằng Array
-function totalFibonaci(answer) {
+function Fibonaci(count) {
     let arr = [0, 1];
-    let total = 0;
-    for (let i = 0; i <= parseInt(answer) + 1; i++) {
-        if (i == 0) {
-            total += arr[i];
-        }
-        else {
-            arr[i + 1] = arr[i] + arr[i - 1];
-            total += arr[i];
-        }
+    for (let i = 1; i <= parseInt(count); i++) {
+        arr[i + 1] = arr[i] + arr[i - 1];
     }
     console.log(arr);
+    return arr;
+}
+function totalFibonaci(arr) {
+    let total = 0;
+    for (let i = 0; i < arr.length; i++) {
+        total += arr[i];
+    }
     console.log(total);
 }
-rl.question('enter count loop: ', (x) => totalFibonaci(x));
+rl.question('enter count loop: ', (answer) => totalFibonaci(Fibonaci(answer)));
 //để quy
 // function fibonaci(n:number):number{
 //     if(n<=1){
