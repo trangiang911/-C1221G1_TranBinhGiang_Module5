@@ -6,16 +6,22 @@ import {CustomerEditComponent} from './customer/customer-edit/customer-edit.comp
 import {FacilityComponent} from './facility/facility-list/facility.component';
 import {FacilityCreateComponent} from './facility/facility-create/facility-create.component';
 import {FacilityEditComponent} from './facility/facility-edit/facility-edit.component';
+import {ContractListComponent} from './contract/contract-list/contract-list.component';
+import {ContractCreateComponent} from './contract/contract-create/contract-create.component';
+import {HomeComponent} from './home/home.component';
 
 
 const routes: Routes = [
-  {path: '', pathMatch: 'full', redirectTo: 'facility-list'},
+  {path: '', pathMatch: 'full', redirectTo: 'home'},
+  {path: 'home', component : HomeComponent},
   {path: 'customer-list', component: CustomerListComponent},
   {path: 'customer-create', component: CustomerCreateComponent},
   {path: 'customer-edit', component: CustomerEditComponent},
   {path: 'facility-list', component: FacilityComponent},
   {path: 'facility-create', component: FacilityCreateComponent},
-  {path: 'facility-edit', component: FacilityEditComponent}
+  {path: 'facility-edit', component: FacilityEditComponent},
+  {path: 'contract-list', component: ContractListComponent},
+  {path: 'contract-create', component: ContractCreateComponent}
 ];
 
 @NgModule({

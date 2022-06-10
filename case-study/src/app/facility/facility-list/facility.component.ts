@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {element} from "protractor";
 
 @Component({
   selector: 'app-facility-list',
@@ -28,21 +29,28 @@ export class FacilityComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // this.removeScript();
     this.loadScript();
   }
 
   public loadScript() {
-
     for (const scriptUrl of this.scriptUrls) {
       const body = document.body as HTMLDivElement;
       const script = document.createElement('script');
       script.innerHTML = '';
       script.src = scriptUrl;
-      // script.async = true;
-      // script.defer = true;
+      // script.type = 'module';
       body.appendChild(script);
     }
-
   }
 
+  public removeScript() {
+    const script = document.scripts;
+    console.log(script.length);
+    let i = script.length;
+    while (i--) {
+      console.log(script.item(i));
+      script.item(i).remove();
+    }
+  }
 }
