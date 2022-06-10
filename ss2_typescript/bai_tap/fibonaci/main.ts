@@ -23,7 +23,7 @@ let rl = readline.createInterface({
 //cách làm bằng Array
 
 
-function Fibonaci(count:string):Array<number>{
+function fibonaci(count:string):Array<number>{
     let arr:Array<number> = [0,1];
     for(let i:number = 1; i<=parseInt(count);i++){
             arr[i+1]=arr[i]+arr[i-1];
@@ -41,7 +41,7 @@ function totalFibonaci(arr:Array<number>){
 }
 
 
-rl.question('enter count loop: ', (answer:any) => totalFibonaci(Fibonaci(answer)));
+rl.question('enter count loop: ', (answer:any) => totalFibonaci(fibonaci(answer)));
 
 
 //để quy

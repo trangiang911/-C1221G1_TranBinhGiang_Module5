@@ -44,7 +44,7 @@ let rl = readline.createInterface({
 // }
 // fibonaci(20);
 //cách làm bằng Array
-function Fibonaci(count) {
+function fibonaci(count) {
     let arr = [0, 1];
     for (let i = 1; i <= parseInt(count); i++) {
         arr[i + 1] = arr[i] + arr[i - 1];
@@ -59,7 +59,7 @@ function totalFibonaci(arr) {
     }
     console.log(total);
 }
-rl.question('enter count loop: ', (answer) => totalFibonaci(Fibonaci(answer)));
+rl.question('enter count loop: ', (answer) => totalFibonaci(fibonaci(answer)));
 //để quy
 // function fibonaci(n:number):number{
 //     if(n<=1){
