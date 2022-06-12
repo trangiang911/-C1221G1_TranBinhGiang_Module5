@@ -51,15 +51,15 @@
       </tr>
       </thead>
       <tbody>
-      <tr>
-        <td>1</td>
-        <td>Villa River Side</td>
-        <td>Trần Bình Giảng</td>
-        <td>01-01-2022</td>
-        <td>05-01-2022</td>
-        <td>500.000</td>
-        <td>5.000.000</td>
-        <td>Buffet, karaoke, thue xe dap</td>
+      <tr *ngFor="let item of contracts,let i = index">
+        <td>{{i+1}}</td>
+        <td>{{item.facility.name}}</td>
+        <td>{{item.customer.name}}</td>
+        <td>{{item.startDate}}</td>
+        <td>{{item.endDate}}</td>
+        <td>{{item.deposit}}</td>
+        <td>{{item.total}}</td>
+        <td>{{item.serviceInclude}}</td>
       </tr>
       </tbody>
     </table>

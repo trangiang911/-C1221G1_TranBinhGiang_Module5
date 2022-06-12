@@ -23,11 +23,12 @@
 }
 .dropout ul {
     position: absolute;
-    top: 1.5rem;
-    right: -0.5rem;
+    top: -0.5rem;
+    right: -5.2rem;
     transform: scaleX(0);
     transform-origin: right;
     transition: transform 0.12s ease;
+  flex-direction: row;
 }
 .dropout:hover ul {
     /*padding: 5px;*/

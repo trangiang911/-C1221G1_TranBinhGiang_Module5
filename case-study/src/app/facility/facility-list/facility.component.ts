@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {element} from "protractor";
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Facility} from '../../models/facility';
+import {facilitys} from '../../data/facility';
 
 @Component({
   selector: 'app-facility-list',
@@ -7,7 +8,7 @@ import {element} from "protractor";
   styleUrls: ['./facility.component.css']
 })
 export class FacilityComponent implements OnInit {
-
+  public contentDelete: string;
   private scriptUrls = [
     '../../assets/js/jquery-3.2.1.min.js',
     '../../assets/js/popper.js',
@@ -24,7 +25,7 @@ export class FacilityComponent implements OnInit {
     '../../assets/js/default-assets/card.js',
     '../../assets/js/three-dot.js'
   ];
-
+  public facilitys = facilitys;
   constructor() {
   }
 
@@ -44,13 +45,20 @@ export class FacilityComponent implements OnInit {
     }
   }
 
-  public removeScript() {
-    const script = document.scripts;
-    console.log(script.length);
-    let i = script.length;
-    while (i--) {
-      console.log(script.item(i));
-      script.item(i).remove();
-    }
+  // private getFacility() {
+  //   this.facilitys = facilitys;
+  // }
+  // public removeScript() {
+  //   const script = document.scripts;
+  //   console.log(script.length);
+  //   let i = script.length;
+  //   while (i--) {
+  //     console.log(script.item(i));
+  //     script.item(i).remove();
+  //   }
+  // }
+
+  delete(name: string) {
+    this.contentDelete = name;
   }
 }
