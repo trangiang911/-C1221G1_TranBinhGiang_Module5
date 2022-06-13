@@ -1,0 +1,58 @@
+<form [formGroup]="createForm" (ngSubmit)="onSubmit()">
+  <div class="container">
+    <h1>Form Đăng Ký</h1>
+    <p>Xin hãy nhập biểu mẫu bên dưới để đăng ký.</p>
+    <hr>
+    <label><b>Email</b></label>
+    <input type="text" placeholder="Nhập Email" name="email" formControlName="email">
+    <p style="color: red" *ngIf="createForm.controls.email.hasError('required') && createForm.controls.email.touched">
+      Email ko đc để trống
+    </p>
+    <p style="color: red" *ngIf="createForm.controls.email.hasError('email') && createForm.controls.email.touched">
+      Email ko đúng format
+    </p>
+    <label ><b>Password</b></label>
+    <input type="password" placeholder="Nhập Mật Khẩu" name="psw" formControlName="psw">
+    <p style="color: red" *ngIf="createForm.controls.psw.hasError('required') && createForm.controls.psw.touched">
+      mật khẩu ko đc để trống
+    </p>
+    <label><b>Confirm Password</b></label>
+    <input type="password" placeholder="Nhập Lại Mật Khẩu" name="psw-confirm" formControlName="confirmPsw">
+    <p style="color: red" *ngIf="createForm.hasError('pwsValid') && createForm.touched">
+      ko trùng nơi
+    </p>
+    <label ><b>Country</b></label> <br>
+<!--    <input type="text" placeholder="country" name="country" formControlName="country">-->
+    <select style="width: 100%;height: 50px" name="country" formControlName="country">
+      <option value="vietnam">Việt Nam</option>
+      <option value="lao">Lào</option>
+      <option value="thai">thai</option>
+    </select>
+    <br><br>
+    <p style="color: red" *ngIf="createForm.controls.country.hasError('required') && createForm.controls.country.touched">
+      country ko đc để trống
+    </p>
+    <label ><b>Age</b></label>
+    <input type="text" placeholder="Age" name="age" formControlName="age">
+    <p style="color: red" *ngIf="createForm.controls.age.hasError('min') && createForm.controls.age.touched">
+      phải hơn 18 tuổi
+    </p>
+    <label ><b>Gender</b></label> <br>
+    <input type="radio"  value="1" formControlName="gender">
+    <label>Nam</label>
+    <input type="radio"  value="0" formControlName="gender">
+    <label>Nữ</label>
+    <br> <br>
+    <label ><b>Phone</b></label>
+    <input type="text" placeholder="Phone" name="phone" formControlName="phone">
+    <p style="color: red" *ngIf="createForm.controls.phone.hasError('pattern') && createForm.controls.phone.touched">
+      phone sai định dạng
+    </p>
+    <p style="color: red" *ngIf="createForm.controls.phone.hasError('required') && createForm.controls.phone.touched">
+      phone ko đc để trống
+    </p>
+    <div class="clearfix">
+      <button type="submit" class="signupbtn">Sign Up</button>
+    </div>
+  </div>
+</form>

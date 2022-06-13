@@ -1,0 +1,28 @@
+
+<form [formGroup]="createForm" (ngSubmit)="onSubmit()">
+  <div class="container">
+    <h1>Form Đăng Ký</h1>
+    <p>Xin hãy nhập biểu mẫu bên dưới để đăng ký.</p>
+    <hr>
+    <label><b>Email</b></label>
+    <input type="text" placeholder="Nhập Email" name="email" formControlName="email">
+    <p style="color: red" *ngIf="createForm.controls.email.hasError('required') && createForm.controls.email.touched">
+      Email ko đc để trống
+    </p>
+    <p style="color: red" *ngIf="createForm.controls.email.hasError('email') && createForm.controls.email.touched">
+      Email ko đúng format
+    </p>
+    <label ><b>Password</b></label>
+    <input type="password" placeholder="Nhập Mật Khẩu" name="psw" formControlName="password">
+    <p style="color: red" *ngIf="createForm.controls.password.hasError('required') && createForm.controls.password.touched">
+      ko đc để trống
+    </p>
+    <p style="color: red" *ngIf="createForm.controls.password.hasError('minlength') && createForm.controls.password.touched">
+      mk tối thiểu 6 kí tự
+    </p>
+
+    <div class="clearfix">
+      <button type="submit" class="signupbtn">Sign Up</button>
+    </div>
+  </div>
+</form>

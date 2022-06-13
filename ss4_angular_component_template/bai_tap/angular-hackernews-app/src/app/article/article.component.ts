@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import {Artile} from '../artile';
+import {Article} from '../article';
 
 @Component({
   selector: 'app-artile',
-  templateUrl: './artile.component.html',
-  styleUrls: ['./artile.component.css']
+  templateUrl: './article.component.html',
+  styleUrls: ['./article.component.css']
 })
-export class ArtileComponent implements OnInit {
-  article: Artile = {};
-  articles: Artile[] = [
+export class ArticleComponent implements OnInit {
+  article: Article = {};
+  articles: Article[] = [
     {
       title: 'The Evolution of Async JavaScript: From Callbacks, to Promises, to Async/Await',
       url: 'https://medium.freecodecamp.org/the-evolution-of-async-javascript-from-callbacks-to-promises-to-async-await-e73b047f2f40'

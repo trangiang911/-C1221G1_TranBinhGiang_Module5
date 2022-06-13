@@ -2,6 +2,8 @@ import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Facility} from '../../models/facility';
 import {facilitys} from '../../data/facility';
 
+declare let card: any;
+
 @Component({
   selector: 'app-facility-list',
   templateUrl: './facility.component.html',
@@ -32,6 +34,7 @@ export class FacilityComponent implements OnInit {
   ngOnInit(): void {
     // this.removeScript();
     this.loadScript();
+    new card();
   }
 
   public loadScript() {
@@ -40,7 +43,6 @@ export class FacilityComponent implements OnInit {
       const script = document.createElement('script');
       script.innerHTML = '';
       script.src = scriptUrl;
-      // script.type = 'module';
       body.appendChild(script);
     }
   }

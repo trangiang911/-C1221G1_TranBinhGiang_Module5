@@ -1,4 +1,4 @@
-export interface Artile {
+export interface Article {
   title?: string;
   url?: string;
 }
