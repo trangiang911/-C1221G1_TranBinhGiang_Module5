@@ -39,31 +39,31 @@
         <div class="form-group row">
           <label for="name" class="col-sm-3 col-form-label">Name</label>
           <div class="col-sm-9">
-            <input type="text" class="form-control" id="name">
+            <input type="text" class="form-control" id="name" formControlName="name">
           </div>
         </div>
         <div class="form-group row">
           <label for="code" class="col-sm-3 col-form-label">Code</label>
           <div class="col-sm-9">
-            <input type="text" class="form-control" id="code">
+            <input type="text" class="form-control" id="code" formControlName="code">
           </div>
         </div>
         <div class="form-group row">
           <label for="floorSquare" class="col-sm-3 col-form-label">Floor square</label>
           <div class="col-sm-9">
-            <input type="number" class="form-control" id="floorSquare">
+            <input type="number" class="form-control" id="floorSquare" formControlName="floorSquare">
           </div>
         </div>
         <div class="form-group row">
           <label for="rentalFee" class="col-sm-3 col-form-label">Rental Fee</label>
           <div class="col-sm-9">
-            <input type="number" class="form-control" id="rentalFee" step="any">
+            <input type="number" class="form-control" id="rentalFee" step="any" formControlName="rentalFee">
           </div>
         </div>
         <div class="form-group row">
           <label for="maximumPeople" class="col-sm-3 col-form-label">Maximum people</label>
           <div class="col-sm-9">
-            <input type="number" class="form-control" id="maximumPeople">
+            <input type="number" class="form-control" id="maximumPeople" formControlName="maximumPeople">
           </div>
         </div>
         <div class="form-group row">
@@ -71,7 +71,7 @@
           <div class="col-sm-9">
             <select class="form-control"
                     id="rentType"
-                    name="rentType">
+                    name="rentType" formControlName="rentType">
               <option value="null">Select Rent type</option>
               <option value="1">Hour</option>
               <option value="2">Day</option>
@@ -85,19 +85,19 @@
           <div class="form-group row">
             <label for="roomStandard" class="col-sm-3 col-form-label">Room standard</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" id="roomStandard">
+              <input type="text" class="form-control" id="roomStandard" formControlName="roomStandard">
             </div>
           </div>
           <div class="form-group row">
             <label for="description" class="col-sm-3 col-form-label">Description</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" id="description">
+              <input type="text" class="form-control" id="description" formControlName="description">
             </div>
           </div>
           <div class="form-group row" [hidden]="!numberFloor">
             <label for="numberFloor" class="col-sm-3 col-form-label">Number of floor</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" id="numberFloor">
+              <input type="text" class="form-control" id="numberFloor" formControlName="numberFloor">
             </div>
           </div>
         </div>
@@ -106,7 +106,7 @@
           <div class="form-group row">
             <label for="poolSquare" class="col-sm-3 col-form-label">Pool square</label>
             <div class="col-sm-9">
-              <input type="number" class="form-control" id="poolSquare">
+              <input type="number" class="form-control" id="poolSquare" formControlName="poolSquare">
             </div>
           </div>
         </div>
@@ -115,7 +115,7 @@
           <div class="form-group row">
             <label for="freeServiceInclude" class="col-sm-3 col-form-label">Free service include</label>
             <div class="col-sm-9">
-              <input type="number" class="form-control" id="freeServiceInclude">
+              <input type="number" class="form-control" id="freeServiceInclude" formControlName="freeServiceInclude">
             </div>
           </div>
         </div>

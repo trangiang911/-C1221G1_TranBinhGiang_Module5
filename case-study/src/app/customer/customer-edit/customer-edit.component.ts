@@ -48,7 +48,7 @@ export class CustomerEditComponent implements OnInit {
     console.log(this.editCus.value);
     if(this.editCus.valid){
       this.customerService.update(this.editCus.value)
-      this.router.navigate(['/customer-list']);
+      // this.router.navigate(['/customer-list']);
       this.ngOnInit()
     }
   }

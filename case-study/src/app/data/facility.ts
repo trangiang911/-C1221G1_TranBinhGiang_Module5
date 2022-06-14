@@ -6,7 +6,7 @@ export const facilitys: Facility[] = [
     image: 'https://cdn.cet.edu.vn/wp-content/uploads/2019/02/villa-khong-gian-sang-trong.jpg',
     rentType: {
      id: 1,
-      rentType: 'Villa'
+      rentType: 'Hour'
     },
     rentalFree: 15000,
     description: 'Quá vip'
@@ -18,7 +18,7 @@ export const facilitys: Facility[] = [
     image: 'https://cdn.cet.edu.vn/wp-content/uploads/2019/02/villa-khong-gian-sang-trong.jpg',
     rentType: {
      id: 1,
-      rentType: 'Villa'
+      rentType: 'Hour'
     },
     rentalFree: 15000,
     description: 'Quá vip'
@@ -30,7 +30,7 @@ export const facilitys: Facility[] = [
     image: 'https://cdn.cet.edu.vn/wp-content/uploads/2019/02/villa-khong-gian-sang-trong.jpg',
     rentType: {
      id: 2,
-      rentType: 'House'
+      rentType: 'Day'
     },
     rentalFree: 15000,
     description: 'Quá vip'
@@ -42,7 +42,7 @@ export const facilitys: Facility[] = [
     image: 'https://cdn.cet.edu.vn/wp-content/uploads/2019/02/villa-khong-gian-sang-trong.jpg',
     rentType: {
      id: 2,
-      rentType: 'House'
+      rentType: 'Day'
     },
     rentalFree: 15000,
     description: 'Quá vip'
@@ -54,7 +54,7 @@ export const facilitys: Facility[] = [
     image: 'https://cdn.cet.edu.vn/wp-content/uploads/2019/02/villa-khong-gian-sang-trong.jpg',
     rentType: {
      id: 3,
-      rentType: 'Room'
+      rentType: 'Month'
     },
     rentalFree: 15000,
     description: 'Quá vip'
@@ -65,7 +65,7 @@ export const facilitys: Facility[] = [
     image: 'https://cdn.cet.edu.vn/wp-content/uploads/2019/02/villa-khong-gian-sang-trong.jpg',
     rentType: {
      id: 3,
-      rentType: 'Room'
+      rentType: 'Month'
     },
     rentalFree: 15000,
     description: 'Quá vip'

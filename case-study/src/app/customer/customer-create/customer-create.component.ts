@@ -13,7 +13,7 @@ import {CustomerService} from "../../services/customer.service";
   styleUrls: ['./customer-create.component.css'],
 })
 export class CustomerCreateComponent implements OnInit {
-  public customers = customers;
+  public customers = this.customerService.getAllCustomer();
   public customerType = customerType;
   createCus = new FormGroup({
     id: new FormControl(this.customers[this.customers.length - 1].id + 1),
@@ -42,7 +42,6 @@ export class CustomerCreateComponent implements OnInit {
   onSubmit() {
     console.log(this.createCus.value);
     if(this.createCus.valid){
-      // let customerList= new CustomerListComponent()
       this.customerService.createCustomer( this.createCus.value);
       this.route.navigate(['/customer-list']);
     }

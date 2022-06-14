@@ -1,6 +1,7 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Facility} from '../../models/facility';
 import {facilitys} from '../../data/facility';
+import {FacilityService} from "../../services/facility.service";
 
 declare let card: any;
 
@@ -11,6 +12,7 @@ declare let card: any;
 })
 export class FacilityComponent implements OnInit {
   public contentDelete: string;
+  public idDel: number;
   private scriptUrls = [
     '../../assets/js/jquery-3.2.1.min.js',
     '../../assets/js/popper.js',
@@ -27,14 +29,14 @@ export class FacilityComponent implements OnInit {
     '../../assets/js/default-assets/card.js',
     '../../assets/js/three-dot.js'
   ];
-  public facilitys = facilitys;
-  constructor() {
+  public facilitys:Array<Facility> = [];
+  constructor(private facilityService: FacilityService) {
   }
 
   ngOnInit(): void {
-    // this.removeScript();
     this.loadScript();
     new card();
+    this.facilitys = this.facilityService.getAllFacility();
   }
 
   public loadScript() {
@@ -47,20 +49,13 @@ export class FacilityComponent implements OnInit {
     }
   }
 
-  // private getFacility() {
-  //   this.facilitys = facilitys;
-  // }
-  // public removeScript() {
-  //   const script = document.scripts;
-  //   console.log(script.length);
-  //   let i = script.length;
-  //   while (i--) {
-  //     console.log(script.item(i));
-  //     script.item(i).remove();
-  //   }
-  // }
-
-  delete(name: string) {
+  delete(name: string,id: number) {
     this.contentDelete = name;
+    this.idDel = id;
+  }
+
+  remove(idDel: number) {
+    this.facilityService.removeById(idDel);
+    this.ngOnInit()
   }
 }

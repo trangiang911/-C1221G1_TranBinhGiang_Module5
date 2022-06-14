@@ -44,7 +44,7 @@
         <div class="mc-footer">
           <h4>Social</h4>
           <a target="_parent" href="#" style="padding:0px ; background-color: red;" class="fa fa-fw btn btn-danger"
-             data-toggle="modal" data-target="#exampleModal" (click)="delete(item.name)">
+             data-toggle="modal" data-target="#exampleModal" (click)="delete(item.name,item.id)">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill"
                  viewBox="0 0 16 16">
               <path
@@ -52,7 +52,7 @@
             </svg>
           </a>
 
-          <a target="_parent" href="#" style="padding:0px ; background-color: #ffc107;"
+          <a target="_parent" [routerLink]="['/facility-edit',item.id]" style="padding:0px ; background-color: #ffc107;"
              class="fa fa-fw btn btn-warning">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill"
                  viewBox="0 0 16 16">
@@ -63,6 +63,26 @@
         </div>
       </article>
     </div>
-<!--    modal-->
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Xác nhận xoá</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Bạn có chắc xoá: <mark style="background-color: red">{{contentDelete}}</mark>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" (click)="remove(idDel)" data-dismiss="modal">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>

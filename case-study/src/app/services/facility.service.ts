@@ -83,4 +83,24 @@ export class FacilityService {
   public getAllFacility(): Array<Facility> {
     return this.facilitys;
   }
+
+  removeById(idDel: number) {
+    this.facilitys = this.facilitys.filter(item => {
+      return item.id !== idDel;
+    })
+  }
+
+  findFacilityById(number: number) {
+    return this.facilitys.find(item => item.id === number);;
+  }
+
+  update(facility: any) {
+    this.facilitys.map((item,i) => {
+      if(item.id === facility.id){
+        this.facilitys[i] = facility;
+        console.log(this.facilitys[i])
+      }
+    })
+    return this.facilitys;
+  }
 }

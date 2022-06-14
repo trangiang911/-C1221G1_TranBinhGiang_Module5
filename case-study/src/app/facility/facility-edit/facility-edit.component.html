@@ -14,6 +14,7 @@
 <!--================Banner Area =================-->
 <!-- ================ Explore section start ================= -->
 <section class="section-margin section-margin--small">
+  <form [formGroup]="editFacility" (ngSubmit)="onSubmit()">
   <div class="container">
     <div class="section-intro text-center pb-80px">
       <div class="section-intro__style">
@@ -25,15 +26,13 @@
       <div class="mx-auto shadow-lg p-3 mb-5 bg-white rounded-lg">
         <input type="hidden" name="id"/>
         <div class="form-group row">
-          <label for="facilityTypeId" class="col-sm-3 col-form-label">Service type</label>
+          <label for="facilityType" class="col-sm-3 col-form-label">Service type</label>
           <div class="col-sm-9">
-            <select id="facilityTypeId"
+            <select id="facilityType"
                     class="form-control"
-                    onchange="showFacilityType()">
-              <option value="null">Select Facility type</option>
-              <option value="1">Villa</option>
-              <option value="2">House</option>
-              <option value="null">Room</option>
+                    onchange="showFacilityType()" formControlName="facilityType">
+              <option value="null" *ngFor="let item of facilityType" [ngValue]="item">{{item.facilityType}}</option>
+
             </select>
           </div>
         </div>
@@ -72,12 +71,9 @@
           <div class="col-sm-9">
             <select class="form-control"
                     id="rentType"
-                    name="rentType">
-              <option value="null">Select Rent type</option>
-              <option value="1">Hour</option>
-              <option value="2">Day</option>
-              <option value="3">Month</option>
-              <option value="4">Year</option>
+                    name="rentType" >
+              <option *ngFor="let item of rentType" [ngValue]="item" >{{item.rentType}}</option>
+
             </select>
           </div>
         </div>
@@ -92,7 +88,7 @@
           <div class="form-group row">
             <label for="description" class="col-sm-3 col-form-label">Description</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" id="description">
+              <input type="text" class="form-control" id="description" formControlName="description">
             </div>
           </div>
           <div class="form-group row">
@@ -130,8 +126,7 @@
         </div>
       </div>
     </div>
-
   </div>
-
+  </form>
 </section>
 <!-- ================ Explore section end ================= -->
