@@ -1,20 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import {customers} from '../../data/customer';
+import {CustomerService} from "../../services/customerService";
+import {Customer} from "../../models/customer";
 
 @Component({
   selector: 'app-customer-list',
   templateUrl: './customer-list.component.html',
-  styleUrls: ['./customer-list.component.css']
+  styleUrls: ['./customer-list.component.css'],
 })
 export class CustomerListComponent implements OnInit {
-  public customers = customers;
+  public customers:Array<Customer> = customers;
   contentDelete: string;
+  idDel: number;
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  delete(name: string) {
+  delete(name: string, id: number) {
     this.contentDelete = name;
+    this.idDel = id;
   }
 }

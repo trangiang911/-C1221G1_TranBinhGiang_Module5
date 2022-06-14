@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Article} from '../article';
 
 @Component({
-  selector: 'app-artile',
+  selector: 'app-article',
   templateUrl: './article.component.html',
   styleUrls: ['./article.component.css']
 })

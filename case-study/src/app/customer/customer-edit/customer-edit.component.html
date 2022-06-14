@@ -1,3 +1,111 @@
+<!--&lt;!&ndash;================Banner Area =================&ndash;&gt;-->
+<!--<section class="banner_area">-->
+<!--  <div class="booking_table d_flex align-items-center">-->
+<!--    <div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>-->
+<!--    <div class="container">-->
+<!--      <div class="banner_content text-center">-->
+<!--        <h6>Away from furama life</h6>-->
+<!--        <h2>CUSTOMER</h2>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--</section>-->
+<!--&lt;!&ndash;================Banner Area =================&ndash;&gt;-->
+<!--&lt;!&ndash; ================ Explore section start ================= &ndash;&gt;-->
+<!--<section class="section-margin section-margin&#45;&#45;small">-->
+<!--  <div class="container">-->
+<!--    <div class="section-intro text-center pb-80px">-->
+<!--      <div class="section-intro__style">-->
+<!--        <img alt="" src="img/home/user.png">-->
+<!--      </div>-->
+<!--      <h2>Update Customer Information</h2>-->
+<!--    </div>-->
+<!--    <div class="col-8 mx-auto">-->
+<!--      <div class="mx-auto shadow-lg p-3 mb-5 bg-white rounded-lg">-->
+<!--        <input type="hidden" name="id"/>-->
+<!--        <div class="form-group row">-->
+<!--          <label for="name" class="col-sm-3 col-form-label">Name</label>-->
+<!--          <div class="col-sm-9">-->
+<!--            <input type="text" class="form-control" id="name">-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="form-group row">-->
+<!--          <label for="code" class="col-sm-3 col-form-label">Code</label>-->
+<!--          <div class="col-sm-9">-->
+<!--            <input type="text" class="form-control" id="code">-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="form-group row">-->
+<!--          <label for="birthday" class="col-sm-3 col-form-label">Birthday</label>-->
+<!--          <div class="col-sm-9">-->
+<!--            <input type="date" class="form-control" id="birthday">-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="form-group row">-->
+<!--          <label for="idCard" class="col-sm-3 col-form-label">Id card</label>-->
+<!--          <div class="col-sm-9">-->
+<!--            <input type="number" class="form-control" id="idCard">-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="form-group row">-->
+<!--          <label for="phone" class="col-sm-3 col-form-label">Phone</label>-->
+<!--          <div class="col-sm-9">-->
+<!--            <input type="number" class="form-control" id="phone">-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="form-group row">-->
+<!--          <label for="email" class="col-sm-3 col-form-label">Email</label>-->
+<!--          <div class="col-sm-9">-->
+<!--            <input type="email" class="form-control" id="email">-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="form-group row">-->
+<!--          <label for="address" class="col-sm-3 col-form-label">Address</label>-->
+<!--          <div class="col-sm-9">-->
+<!--            <input type="text" class="form-control" id="address">-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="form-group row">-->
+<!--          <label for="gender" class="col-sm-3 col-form-label">Gender</label>-->
+<!--          <div class="col-sm-9">-->
+<!--            <select class="form-control"-->
+<!--                    id="gender"-->
+<!--                    name="gender">-->
+<!--              <option value="-1">Other</option>-->
+<!--              <option value="0">Female</option>-->
+<!--              <option value="1">Male</option>-->
+<!--            </select>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="form-group row">-->
+<!--          <label for="customerType" class="col-sm-3 col-form-label">Customer type</label>-->
+<!--          <div class="col-sm-9">-->
+<!--            <select id="customerType"-->
+<!--                    class="form-control">-->
+<!--              <option value="null">Select Customer type</option>-->
+<!--              <option value="1">Diamond</option>-->
+<!--              <option value="2">Platinum</option>-->
+<!--              <option value="3">Gold</option>-->
+<!--              <option value="4">Silver</option>-->
+<!--              <option value="5">Member</option>-->
+<!--            </select>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="d-flex justify-content-center">-->
+<!--          <div class="mx-2">-->
+<!--            <a href="#" class="button button&#45;&#45;cancel cancel-banner-btn">Cancel</a>-->
+<!--          </div>-->
+<!--          <div class="mx-2">-->
+<!--            <a href="#" class="button button&#45;&#45;active home-banner-btn">Update</a>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+<!--&lt;!&ndash; ================ Explore section end ================= &ndash;&gt;-->
+
 <!--================Banner Area =================-->
 <section class="banner_area">
   <div class="booking_table d_flex align-items-center">
@@ -14,94 +122,140 @@
 <!--================Banner Area =================-->
 <!-- ================ Explore section start ================= -->
 <section class="section-margin section-margin--small">
-  <div class="container">
-    <div class="section-intro text-center pb-80px">
-      <div class="section-intro__style">
-        <img alt="" src="img/home/user.png">
+  <form [formGroup]="editCus" (ngSubmit)="onSubmit()">
+    <div class="container">
+      <div class="section-intro text-center pb-80px">
+        <div class="section-intro__style">
+          <img alt="" src="img/home/user.png">
+        </div>
+        <h2>Create New Customer</h2>
       </div>
-      <h2>Update Customer Information</h2>
-    </div>
-    <div class="col-8 mx-auto">
-      <div class="mx-auto shadow-lg p-3 mb-5 bg-white rounded-lg">
-        <input type="hidden" name="id"/>
-        <div class="form-group row">
-          <label for="name" class="col-sm-3 col-form-label">Name</label>
-          <div class="col-sm-9">
-            <input type="text" class="form-control" id="name">
+      <div class="col-8 mx-auto">
+        <div class="mx-auto shadow-lg p-3 mb-5 bg-white rounded-lg">
+          <div class="form-group row">
+            <label for="name" class="col-sm-3 col-form-label">Name</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="name" name="name" formControlName="name">
+<!--              <p style="color: red" *ngIf="editCus.controls.name.hasError('pattern') && editCus.controls.name.touched">-->
+<!--                Tên phải đúng format Nguyen Van A-->
+<!--              </p>-->
+              <p style="color: red" *ngIf="editCus.controls.name.hasError('required') && editCus.controls.name.touched">
+                Không đc để trống
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="form-group row">
-          <label for="code" class="col-sm-3 col-form-label">Code</label>
-          <div class="col-sm-9">
-            <input type="text" class="form-control" id="code">
+          <div class="form-group row">
+            <label for="code" class="col-sm-3 col-form-label">Code</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="code" name="code" formControlName="code">
+              <p style="color: red" *ngIf="editCus.controls.code.hasError('required') && editCus.controls.code.touched">
+                Không đc để trống
+              </p>
+              <p style="color: red" *ngIf="editCus.controls.code.hasError('pattern') && editCus.controls.code.touched">
+                Không đúng format KH-XXXX
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="form-group row">
-          <label for="birthday" class="col-sm-3 col-form-label">Birthday</label>
-          <div class="col-sm-9">
-            <input type="date" class="form-control" id="birthday">
+          <div class="form-group row">
+            <label for="birthday" class="col-sm-3 col-form-label">Birthday</label>
+            <div class="col-sm-9">
+              <input type="date" class="form-control" id="birthday" name="birthday" formControlName="birthday">
+              <p style="color: red" *ngIf="editCus.controls.birthday.hasError('required') && editCus.controls.birthday.touched">
+                Không đc để trống
+              </p>
+              <p style="color: red" *ngIf="editCus.controls.birthday.hasError('pattern') && editCus.controls.birthday.touched">
+                Không đúng format dd/mm/yyyy
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="form-group row">
-          <label for="idCard" class="col-sm-3 col-form-label">Id card</label>
-          <div class="col-sm-9">
-            <input type="number" class="form-control" id="idCard">
+          <div class="form-group row">
+            <label for="idCard" class="col-sm-3 col-form-label">Id card</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="idCard" name="idCard" formControlName="idCard">
+              <p style="color: red" *ngIf="editCus.controls.idCard.hasError('required') && editCus.controls.idCard.touched">
+                Không đc để trống
+              </p>
+              <p style="color: red" *ngIf="editCus.controls.idCard.hasError('pattern') && editCus.controls.idCard.touched">
+                Không đcđúng format XXXXXXXXX hoặc XXXXXXXXXXX
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="form-group row">
-          <label for="phone" class="col-sm-3 col-form-label">Phone</label>
-          <div class="col-sm-9">
-            <input type="number" class="form-control" id="phone">
+          <div class="form-group row">
+            <label for="phone" class="col-sm-3 col-form-label">Phone</label>
+            <div class="col-sm-9">
+              <input type="number" class="form-control" id="phone" name="phone" formControlName="phone">
+              <p style="color: red" *ngIf="editCus.controls.phone.hasError('required') && editCus.controls.phone.touched">
+                Không đc để trống
+              </p>
+              <p style="color: red" *ngIf="editCus.controls.phone.hasError('pattern') && editCus.controls.phone.touched">
+                Không đúng format 090XXXXXX 091XXXXXXX hoặc ()
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="form-group row">
-          <label for="email" class="col-sm-3 col-form-label">Email</label>
-          <div class="col-sm-9">
-            <input type="email" class="form-control" id="email">
+          <div class="form-group row">
+            <label for="email" class="col-sm-3 col-form-label">Email</label>
+            <div class="col-sm-9">
+              <input type="email" class="form-control" id="email" name="email" formControlName="email">
+              <p style="color: red" *ngIf="editCus.controls.email.hasError('required') && editCus.controls.email.touched">
+                Không đc để trống
+              </p>
+              <p style="color: red" *ngIf="editCus.controls.email.hasError('pattern') && editCus.controls.email.touched">
+                Không đúng format email chuẩn quốc tế
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="form-group row">
-          <label for="address" class="col-sm-3 col-form-label">Address</label>
-          <div class="col-sm-9">
-            <input type="text" class="form-control" id="address">
+          <div class="form-group row">
+            <label for="address" class="col-sm-3 col-form-label">Address</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="address" name="address" formControlName="address">
+              <p style="color: red" *ngIf="editCus.controls.address.hasError('required') && editCus.controls.address.touched">
+                Không đc để trống
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="form-group row">
-          <label for="gender" class="col-sm-3 col-form-label">Gender</label>
-          <div class="col-sm-9">
-            <select class="form-control"
-                    id="gender"
-                    name="gender">
-              <option value="-1">Other</option>
-              <option value="0">Female</option>
-              <option value="1">Male</option>
-            </select>
+          <div class="form-group row">
+            <label for="gender" class="col-sm-3 col-form-label">Gender</label>
+            <div class="col-sm-9">
+              <select class="form-control"
+                      id="gender"
+                      name="gender" formControlName="gender">
+                <option value="-1">Other</option>
+                <option value="0">Female</option>
+                <option value="1">Male</option>
+              </select>
+              <p style="color: red" *ngIf="editCus.controls.gender.hasError('required') && editCus.controls.gender.touched">
+                Không đc để trống
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="form-group row">
-          <label for="customerType" class="col-sm-3 col-form-label">Customer type</label>
-          <div class="col-sm-9">
-            <select id="customerType"
-                    class="form-control">
-              <option value="null">Select Customer type</option>
-              <option value="1">Diamond</option>
-              <option value="2">Platinum</option>
-              <option value="3">Gold</option>
-              <option value="4">Silver</option>
-              <option value="5">Member</option>
-            </select>
+          <div class="form-group row">
+            <label for="customerType" class="col-sm-3 col-form-label">Customer type</label>
+            <div class="col-sm-9">
+              <select id="customerType"
+                      class="form-control" name="type" formControlName="customerType" [compareWith]="compareByID">
+                <option *ngFor="let item of customerType" [ngValue]="item">{{item.type}}</option>
+              </select>
+              <p style="color: red" *ngIf="editCus.controls.customerType.hasError('required') && editCus.controls.customerType.touched">
+                Không đc để trống
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="d-flex justify-content-center">
-          <div class="mx-2">
-            <a href="#" class="button button--cancel cancel-banner-btn">Cancel</a>
-          </div>
-          <div class="mx-2">
-            <a href="#" class="button button--active home-banner-btn">Update</a>
+          <div class="d-flex justify-content-center">
+            <div class="mx-2">
+              <a href="#" class="button button--cancel cancel-banner-btn">Cancel</a>
+            </div>
+            <div class="mx-2">
+              <!--            <a href="#" class="button button&#45;&#45;active home-banner-btn" (click)="createCustomer()">Create</a>-->
+              <button type="submit">Update</button>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+    <div>
+      <h4>Copyright: Phạm Việt Khoa-C1221G1</h4>
+    </div>
+  </form>
 </section>
 <!-- ================ Explore section end ================= -->
+

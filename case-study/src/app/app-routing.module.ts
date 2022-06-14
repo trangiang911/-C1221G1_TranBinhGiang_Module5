@@ -21,7 +21,8 @@ const routes: Routes = [
   {path: 'facility-create', component: FacilityCreateComponent},
   {path: 'facility-edit', component: FacilityEditComponent},
   {path: 'contract-list', component: ContractListComponent},
-  {path: 'contract-create', component: ContractCreateComponent}
+  {path: 'contract-create', component: ContractCreateComponent},
+  {path: 'customer-edit/:id', component: CustomerEditComponent}
 ];
 
 @NgModule({

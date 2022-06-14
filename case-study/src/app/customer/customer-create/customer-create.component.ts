@@ -4,6 +4,8 @@ import {customers} from '../../data/customer';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {customerType} from '../../data/customerType';
 import {CustomerService} from '../../services/customerService';
+import {Router} from "@angular/router";
+import {CustomerListComponent} from "../customer-list/customer-list.component";
 
 @Component({
   selector: 'app-customer-create',
@@ -18,7 +20,7 @@ export class CustomerCreateComponent implements OnInit {
     id: new FormControl(this.customers[this.customers.length - 1].id + 1),
     name: new FormControl('',[Validators.required,Validators.pattern(/^[A-Z][a-z]+(\s[A-Z][a-z]+)*$/)]),
     code: new FormControl('',[Validators.required,Validators.pattern(/^(KH-)\d{4}$/)]),
-    birthday: new FormControl('',[Validators.required,Validators.pattern(/^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$/)]),
+    birthday: new FormControl('',[Validators.required,Validators.pattern(/^\d{4}-\d{2}-\d{2}$/)]),
     idCard: new FormControl('',[Validators.required,Validators.pattern(/^\d{9,12}$/)]),
     phone: new FormControl('',[Validators.required,Validators.pattern(/((\(84\)\+(90))|(\(84\)\+(91))|(090)|(091))\d{7}/)]),
     email: new FormControl('',[Validators.required,Validators.email]),
@@ -31,7 +33,8 @@ export class CustomerCreateComponent implements OnInit {
     // }),
   });
 
-  constructor(private customerService: CustomerService) {
+  constructor(private customerService: CustomerService,
+              private route: Router) {
   }
 
   ngOnInit(): void {
@@ -39,6 +42,10 @@ export class CustomerCreateComponent implements OnInit {
 
   onSubmit() {
     console.log(this.createCus.value);
-    this.customerService.createCustomer(customers, this.createCus.value);
+    if(this.createCus.valid){
+      // let customerList= new CustomerListComponent()
+      this.customerService.createCustomer(customers, this.createCus.value);
+      this.route.navigate(['/customer-list']);
+    }
   }
 }
