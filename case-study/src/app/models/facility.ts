@@ -7,7 +7,7 @@ export interface Facility {
   code?: string;
   image?: string;
   rentType?: RentType;
-  rentalFree?: number;
+  rentalFee?: number;
   floorSquare?: number;
   maximumPeople?: number;
   roomStandard?: string;

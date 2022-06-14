@@ -5,6 +5,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {FacilityService} from "../../services/facility.service";
 import {facilityType} from "../../data/facilityType";
 import {rentType} from "../../data/rentType";
+import {FacilityType} from "../../models/facilityType";
 
 @Component({
   selector: 'app-facility-edit',
@@ -25,6 +26,7 @@ public rentType = rentType;
     code: new FormControl(''),
     floorSquare: new FormControl(''),
     rentalFee: new FormControl(''),
+    image: new FormControl(''),
     maximumPeople: new FormControl(''),
     rentType: new FormControl(''),
     roomStandard: new FormControl(''),
@@ -43,7 +45,7 @@ public rentType = rentType;
     console.log(param);
     this.facility = this.facilityService.findFacilityById((Number)(param));
     console.log(this.facility);
-    this.editFacility.patchValue(this.facility);
+    this.editFacility.setValue(this.facility);
     this.faclititys = this.facilityService.getAllFacility();
   }
 
@@ -57,19 +59,21 @@ public rentType = rentType;
   compareByID(itemOne, itemTwo) {
     return itemOne && itemTwo && itemOne.id === itemTwo.id;
   }
-  showFacility(value: any) {
-    switch (value) {
-      case '1':
-        this.poolSquare = true;
-        this.numberFloor = true;
-        break;
-      case '2':
-        this.poolSquare = false;
-        this.numberFloor = true;
-        break;
-      case '3':
-        this.numberFloor = false;
-        this.poolSquare = false;
-    }
-  }
+
+  // showFacility(value: FacilityType) {
+  //   console.log(value)
+  //   switch (value.id) {
+  //     case value.id = 1:
+  //       this.poolSquare = true;
+  //       this.numberFloor = true;
+  //       break;
+  //     case value.id = 2:
+  //       this.poolSquare = false;
+  //       this.numberFloor = true;
+  //       break;
+  //     case value.id = 3:
+  //       this.numberFloor = false;
+  //       this.poolSquare = false;
+  //   }
+  // }
 }

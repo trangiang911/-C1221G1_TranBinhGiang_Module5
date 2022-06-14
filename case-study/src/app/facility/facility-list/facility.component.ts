@@ -1,6 +1,5 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Facility} from '../../models/facility';
-import {facilitys} from '../../data/facility';
 import {FacilityService} from "../../services/facility.service";
 
 declare let card: any;
