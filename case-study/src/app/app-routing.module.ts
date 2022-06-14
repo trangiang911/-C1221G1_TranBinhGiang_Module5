@@ -16,13 +16,12 @@ const routes: Routes = [
   {path: 'home', component : HomeComponent},
   {path: 'customer-list', component: CustomerListComponent},
   {path: 'customer-create', component: CustomerCreateComponent},
-  {path: 'customer-edit', component: CustomerEditComponent},
+  {path: 'customer-edit/:id', component: CustomerEditComponent},
   {path: 'facility-list', component: FacilityComponent},
   {path: 'facility-create', component: FacilityCreateComponent},
   {path: 'facility-edit', component: FacilityEditComponent},
   {path: 'contract-list', component: ContractListComponent},
   {path: 'contract-create', component: ContractCreateComponent},
-  {path: 'customer-edit/:id', component: CustomerEditComponent}
 ];
 
 @NgModule({

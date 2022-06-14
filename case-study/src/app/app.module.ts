@@ -15,7 +15,6 @@ import { HomeComponent } from './home/home.component';
 import { ContractListComponent } from './contract/contract-list/contract-list.component';
 import { ContractCreateComponent } from './contract/contract-create/contract-create.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +30,6 @@ import { ModalComponent } from './modal/modal.component';
     HomeComponent,
     ContractListComponent,
     ContractCreateComponent,
-    ModalComponent
   ],
     imports: [
         BrowserModule,
@@ -39,7 +37,8 @@ import { ModalComponent } from './modal/modal.component';
         FormsModule,
         ReactiveFormsModule
     ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

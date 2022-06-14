@@ -1,17 +1,16 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Customer} from '../../models/customer';
-import {customers} from '../../data/customer';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {customerType} from '../../data/customerType';
-import {CustomerService} from '../../services/customerService';
 import {Router} from "@angular/router";
 import {CustomerListComponent} from "../customer-list/customer-list.component";
+import {customers} from "../../data/customer";
+import {CustomerService} from "../../services/customer.service";
 
 @Component({
   selector: 'app-customer-create',
   templateUrl: './customer-create.component.html',
   styleUrls: ['./customer-create.component.css'],
-  providers: [CustomerService]
 })
 export class CustomerCreateComponent implements OnInit {
   public customers = customers;
@@ -44,7 +43,7 @@ export class CustomerCreateComponent implements OnInit {
     console.log(this.createCus.value);
     if(this.createCus.valid){
       // let customerList= new CustomerListComponent()
-      this.customerService.createCustomer(customers, this.createCus.value);
+      this.customerService.createCustomer( this.createCus.value);
       this.route.navigate(['/customer-list']);
     }
   }

@@ -1,6 +1,8 @@
 import {Customer} from '../models/customer';
+import {Facility} from "../models/facility";
+import {Contract} from "../models/contract";
 
-export const customers: Customer[] = [
+export const customers = [
   {
     id: 1,
     code: 'KH-001',

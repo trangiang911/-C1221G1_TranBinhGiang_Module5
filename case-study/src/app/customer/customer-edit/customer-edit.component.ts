@@ -1,28 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, ParamMap} from "@angular/router";
-import {CustomerService} from "../../services/customerService";
+import {ActivatedRoute, ParamMap, Router} from "@angular/router";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {customers} from "../../data/customer";
 import {customerType} from "../../data/customerType";
 import {Customer} from "../../models/customer";
+import {CustomerService} from "../../services/customer.service";
 
 @Component({
   selector: 'app-customer-edit',
   templateUrl: './customer-edit.component.html',
   styleUrls: ['./customer-edit.component.css'],
-  providers: [CustomerService]
 })
 export class CustomerEditComponent implements OnInit {
-  public customers = customers;
+  public customers: Array<Customer> = [] ;
   public customer = {} as Customer;
   public customerType = customerType;
   editCus = new FormGroup({
-    id: new FormControl(this.customers[this.customers.length - 1].id),
+    id: new FormControl(''),
     name: new FormControl('',[Validators.required]),
     code: new FormControl('',[Validators.required,Validators.pattern(/^(KH-)\d{4}$/)]),
     birthday: new FormControl('',[Validators.required,Validators.pattern(/^\d{4}-\d{2}-\d{2}$/)]),
     idCard: new FormControl('',[Validators.required,Validators.pattern(/^\d{9,12}$/)]),
-    phone: new FormControl('',[Validators.required,Validators.pattern(/((\(84\)\+(90))|(\(84\)\+(91))|(090)|(091))\d{7}/)]),
+    phone: new FormControl('',[Validators.required]),
     email: new FormControl('',[Validators.required,Validators.email]),
     address: new FormControl('',[Validators.required]),
     gender: new FormControl(-1,[Validators.required]),
@@ -33,23 +31,25 @@ export class CustomerEditComponent implements OnInit {
     // }),
   });
   constructor(private route: ActivatedRoute,
-              private customerService: CustomerService) { }
+              private customerService: CustomerService,
+              private router: Router) { }
 
   ngOnInit(): void {
     const allParams = this.route.snapshot.paramMap;
     const param = allParams.get('id');
     console.log(param);
-    this.customer = this.customerService.findCustomerById(customers,(Number)(param));
+    this.customer = this.customerService.findCustomerById((Number)(param));
     console.log(this.customer);
     this.editCus.setValue(this.customer);
+    this.customers = this.customerService.getAllCustomer();
   }
 
   onSubmit() {
     console.log(this.editCus.value);
     if(this.editCus.valid){
-      this.customerService.Update(customers,this.editCus.value)
-      console.log(this.customer)
-
+      this.customerService.update(this.editCus.value)
+      this.router.navigate(['/customer-list']);
+      this.ngOnInit()
     }
   }
   compareByID(itemOne, itemTwo) {

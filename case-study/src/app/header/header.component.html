@@ -3,7 +3,7 @@
   <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light">
       <!-- Brand and toggle get grouped for better mobile display -->
-      <a class="navbar-brand logo_h" href="index.html"><img style="width: 200px;height: 100px;" src="https://zoukclub.com/wp-content/uploads/2019/11/Furama-Riverfront-Logo.png" alt=""></a>
+      <a class="navbar-brand logo_h" [routerLink]="['/home']"><img style="width: 200px;height: 100px;" src="https://zoukclub.com/wp-content/uploads/2019/11/Furama-Riverfront-Logo.png" alt=""></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -14,7 +14,7 @@
         <ul class="nav navbar-nav menu_nav ml-auto">
           <li class="nav-item active"><a class="nav-link" [routerLink]="['/home']">Home</a></li>
           <li class="nav-item submenu dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Customer</a>
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Customer</a>
             <ul class="dropdown-menu">
               <li class="nav-item"><a class="nav-link" [routerLink]="['/customer-list']">List</a></li>
               <li class="nav-item"><a class="nav-link" [routerLink]="['/customer-create']" >Create</a></li>
@@ -22,7 +22,7 @@
           </li>
 
           <li class="nav-item submenu dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Employee</a>
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Employee</a>
             <ul class="dropdown-menu">
               <li class="nav-item"><a class="nav-link" [routerLink]="['#']" >List</a></li>
               <li class="nav-item"><a class="nav-link" [routerLink]="['#']" >Create</a></li>
@@ -30,7 +30,7 @@
           </li>
 
           <li class="nav-item submenu dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Facility</a>
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Facility</a>
             <ul class="dropdown-menu">
               <li class="nav-item"><a class="nav-link" [routerLink]="['/facility-list']">List</a></li>
               <li class="nav-item"><a class="nav-link" [routerLink]="['/facility-create']">Create</a></li>
@@ -38,7 +38,7 @@
           </li>
 
           <li class="nav-item submenu dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contract</a>
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contract</a>
             <ul class="dropdown-menu">
               <li class="nav-item"><a class="nav-link" [routerLink]="['/contract-list']">List</a></li>
               <li class="nav-item"><a class="nav-link" [routerLink]="['/contract-create']">Create</a></li>
