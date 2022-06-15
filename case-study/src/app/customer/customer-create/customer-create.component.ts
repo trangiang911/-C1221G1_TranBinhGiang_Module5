@@ -44,6 +44,8 @@ export class CustomerCreateComponent implements OnInit {
     if(this.createCus.valid){
       this.customerService.createCustomer( this.createCus.value);
       this.route.navigate(['/customer-list']);
+    }else {
+      alert('Ko ổn rồi đại vương')
     }
   }
 }

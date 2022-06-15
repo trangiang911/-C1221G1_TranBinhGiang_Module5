@@ -35,7 +35,7 @@
           </div>
           <div class="mc-description">
             {{item.description}} <br>
-            <mark style="background: #ecec0b"><span style="font-size: x-large">Price: {{item.rentalFree|currency: "$"}}/Day</span></mark>
+            <mark style="background: #ecec0b"><span style="font-size: x-large">Price: {{item.rentalFee|currency: "$"}}/Day</span></mark>
           </div>
         </div>
         <a class="mc-btn-action">
@@ -52,7 +52,7 @@
             </svg>
           </a>
 
-          <a target="_parent" [routerLink]="['/facility-edit',item.id]" style="padding:0px ; background-color: #ffc107;"
+          <a target="_parent" [routerLink]="['/facility/edit',item.id]" style="padding:0px ; background-color: #ffc107;"
              class="fa fa-fw btn btn-warning">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill"
                  viewBox="0 0 16 16">

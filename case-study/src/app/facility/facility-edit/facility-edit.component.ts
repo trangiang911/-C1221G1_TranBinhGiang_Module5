@@ -15,10 +15,10 @@ import {FacilityType} from "../../models/facilityType";
 export class FacilityEditComponent implements OnInit {
   public poolSquare: boolean;
   public numberFloor: boolean;
-public faclititys:Array<Facility> = [];
-public facility = {} as Facility;
-public facilityType = facilityType;
-public rentType = rentType;
+  public faclititys:Array<Facility> = [];
+  public facility = {} as Facility;
+  public facilityType = facilityType;
+  public rentType = rentType;
   editFacility = new FormGroup({
     id: new FormControl(''),
     facilityType: new FormControl(),

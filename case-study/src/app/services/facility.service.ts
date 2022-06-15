@@ -166,4 +166,8 @@ export class FacilityService {
     })
     return this.facilitys;
   }
+
+  createFacility(value: any) {
+    this.facilitys.push(value)
+  }
 }

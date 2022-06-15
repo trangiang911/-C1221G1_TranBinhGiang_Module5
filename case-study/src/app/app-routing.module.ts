@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
 import {CustomerListComponent} from './customer/customer-list/customer-list.component';
 import {CustomerCreateComponent} from './customer/customer-create/customer-create.component';
 import {CustomerEditComponent} from './customer/customer-edit/customer-edit.component';
@@ -13,19 +13,16 @@ import {HomeComponent} from './home/home.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'home'},
-  {path: 'home', component : HomeComponent},
-  {path: 'customer-list', component: CustomerListComponent},
-  {path: 'customer-create', component: CustomerCreateComponent},
-  {path: 'customer-edit/:id', component: CustomerEditComponent},
-  {path: 'facility-list', component: FacilityComponent},
-  {path: 'facility-create', component: FacilityCreateComponent},
-  {path: 'facility-edit/:id', component: FacilityEditComponent},
-  {path: 'contract-list', component: ContractListComponent},
-  {path: 'contract-create', component: ContractCreateComponent},
+  {path: 'customer', loadChildren: () => import('./customer/customer.module').then(module => module.CustomerModule)},
+  {path: 'contract', loadChildren: () => import('./contract/contract.module').then(module => module.ContractModule)},
+  {path: 'facility', loadChildren: () => import('./facility/facility.module').then(module => module.FacilityModule)},
+  {path: 'home', component: HomeComponent},
+
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

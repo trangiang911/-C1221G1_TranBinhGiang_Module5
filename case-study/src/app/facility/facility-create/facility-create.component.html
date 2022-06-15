@@ -14,6 +14,7 @@
 <!--================Banner Area =================-->
 <!-- ================ Explore section start ================= -->
 <section class="section-margin section-margin--small">
+  <form [formGroup]="createFacility" (ngSubmit)="onSubmit()">
   <div class="container">
     <div class="section-intro text-center pb-80px">
       <div class="section-intro__style">
@@ -28,30 +29,31 @@
           <div class="col-sm-9">
             <select id="facilityTypeId"
                     class="form-control"
-                    (change)="showFacility($event.target.value)">
-              <option value="null">Select Facility type</option>
-              <option value="1">Villa</option>
-              <option value="2">House</option>
-              <option value="3">Room</option>
+                    (ngModelChange)="showFacility($event)" formControlName="facilityType">
+              <option *ngFor="let item of facilityType" [ngValue]="item">{{item.facilityType}}</option>
             </select>
+
           </div>
         </div>
         <div class="form-group row">
           <label for="name" class="col-sm-3 col-form-label">Name</label>
           <div class="col-sm-9">
             <input type="text" class="form-control" id="name" formControlName="name">
+
           </div>
         </div>
         <div class="form-group row">
           <label for="code" class="col-sm-3 col-form-label">Code</label>
           <div class="col-sm-9">
             <input type="text" class="form-control" id="code" formControlName="code">
+
           </div>
         </div>
         <div class="form-group row">
           <label for="floorSquare" class="col-sm-3 col-form-label">Floor square</label>
           <div class="col-sm-9">
             <input type="number" class="form-control" id="floorSquare" formControlName="floorSquare">
+
           </div>
         </div>
         <div class="form-group row">
@@ -59,11 +61,13 @@
           <div class="col-sm-9">
             <input type="number" class="form-control" id="rentalFee" step="any" formControlName="rentalFee">
           </div>
+
         </div>
         <div class="form-group row">
           <label for="maximumPeople" class="col-sm-3 col-form-label">Maximum people</label>
           <div class="col-sm-9">
             <input type="number" class="form-control" id="maximumPeople" formControlName="maximumPeople">
+
           </div>
         </div>
         <div class="form-group row">
@@ -72,12 +76,9 @@
             <select class="form-control"
                     id="rentType"
                     name="rentType" formControlName="rentType">
-              <option value="null">Select Rent type</option>
-              <option value="1">Hour</option>
-              <option value="2">Day</option>
-              <option value="3">Month</option>
-              <option value="4">Year</option>
+              <option *ngFor="let item of rentType" [ngValue]="item">{{item.rentType}}</option>
             </select>
+
           </div>
         </div>
         <!--                 House and Villa-->
@@ -86,18 +87,21 @@
             <label for="roomStandard" class="col-sm-3 col-form-label">Room standard</label>
             <div class="col-sm-9">
               <input type="text" class="form-control" id="roomStandard" formControlName="roomStandard">
+
             </div>
           </div>
           <div class="form-group row">
             <label for="description" class="col-sm-3 col-form-label">Description</label>
             <div class="col-sm-9">
               <input type="text" class="form-control" id="description" formControlName="description">
+
             </div>
           </div>
           <div class="form-group row" [hidden]="!numberFloor">
             <label for="numberFloor" class="col-sm-3 col-form-label">Number of floor</label>
             <div class="col-sm-9">
               <input type="text" class="form-control" id="numberFloor" formControlName="numberFloor">
+
             </div>
           </div>
         </div>
@@ -107,6 +111,7 @@
             <label for="poolSquare" class="col-sm-3 col-form-label">Pool square</label>
             <div class="col-sm-9">
               <input type="number" class="form-control" id="poolSquare" formControlName="poolSquare">
+
             </div>
           </div>
         </div>
@@ -124,14 +129,13 @@
             <a href="#" class="button button--cancel cancel-banner-btn">Cancel</a>
           </div>
           <div class="mx-2">
-            <a href="#" class="button button--active home-banner-btn">Create</a>
+            <button type="submit">Create</button>
           </div>
         </div>
-
       </div>
     </div>
 
   </div>
-
+  </form>
 </section>
 <!-- ================ Explore section end ================= -->
