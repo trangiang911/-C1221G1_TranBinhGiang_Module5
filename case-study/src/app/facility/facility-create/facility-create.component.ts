@@ -1,6 +1,6 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Facility} from "../../models/facility";
-import {FacilityService} from "../../services/facility.service";
+import {FacilityService} from "../facility.service";
 import {facilityType} from "../../data/facilityType";
 import {rentType} from "../../data/rentType";
 import {FormControl, FormGroup, Validators} from "@angular/forms";

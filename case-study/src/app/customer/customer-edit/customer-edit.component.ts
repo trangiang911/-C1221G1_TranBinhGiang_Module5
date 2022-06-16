@@ -3,7 +3,9 @@ import {ActivatedRoute, ParamMap, Router} from "@angular/router";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {customerType} from "../../data/customerType";
 import {Customer} from "../../models/customer";
-import {CustomerService} from "../../services/customer.service";
+import {CustomerService} from "../customer.service";
+import {CustomerType} from "../../models/customer-type";
+import {CustomerTypeService} from "../customer-type.service";
 
 @Component({
   selector: 'app-customer-edit',
@@ -13,7 +15,8 @@ import {CustomerService} from "../../services/customer.service";
 export class CustomerEditComponent implements OnInit {
   public customers: Array<Customer> = [] ;
   public customer = {} as Customer;
-  public customerType = customerType;
+  public customerType:Array<CustomerType>;
+  public id:number;
   editCus = new FormGroup({
     id: new FormControl(''),
     name: new FormControl('',[Validators.required]),
@@ -24,30 +27,39 @@ export class CustomerEditComponent implements OnInit {
     email: new FormControl('',[Validators.required,Validators.email]),
     address: new FormControl('',[Validators.required]),
     gender: new FormControl(-1,[Validators.required]),
-    customerType: new FormControl(this.customerType[0],[Validators.required]),
-    // customerType: new FormGroup({
-    //   id: new FormControl(),
-    //   type: new FormControl(),
-    // }),
+    customerType: new FormControl([Validators.required]),
   });
   constructor(private route: ActivatedRoute,
               private customerService: CustomerService,
-              private router: Router) { }
-
-  ngOnInit(): void {
-    const allParams = this.route.snapshot.paramMap;
-    const param = allParams.get('id');
-    console.log(param);
-    this.customer = this.customerService.findCustomerById((Number)(param));
-    console.log(this.customer);
-    this.editCus.setValue(this.customer);
-    this.customers = this.customerService.getAllCustomer();
+              private customerTypeService: CustomerTypeService,
+              private router: Router) {
+    this.route.paramMap.subscribe((paramMap: ParamMap) =>{
+        this.id = +paramMap.get('id');
+        this.getCustomer(this.id);
+    })
   }
 
-  onSubmit() {
+  ngOnInit(): void {
+    this.getAllCustomerType()
+  }
+  getAllCustomerType(){
+    this.customerTypeService.getAllCustomerType().subscribe(customerType =>
+    this.customerType = customerType)
+  }
+  getCustomer(id: number){
+    return this.customerService.findCustomerById(id).subscribe(customer => {
+      this.editCus.setValue(customer)
+    });
+  }
+
+  onSubmit(id :number) {
+    const customer = this.editCus.value;
     console.log(this.editCus.value);
     if(this.editCus.valid){
-      this.customerService.update(this.editCus.value)
+      this.customerService.update(customer, id).subscribe(() => {
+        alert('thành công');
+        this.router.navigate(['customer/list']);
+      },e => console.log(e))
       // this.router.navigate(['/customer-list']);
       this.ngOnInit()
     }

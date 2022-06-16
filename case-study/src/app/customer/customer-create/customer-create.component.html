@@ -125,7 +125,8 @@
           <div class="col-sm-9">
             <select id="customerType"
                     class="form-control" name="type" formControlName="customerType">
-              <option *ngFor="let item of customerType" [ngValue]="item">{{item.type}}</option>
+              <option value="">Choice</option>
+              <option *ngFor="let item of customerTypes" [ngValue]="item">{{item.type}}</option>
             </select>
             <p style="color: red" *ngIf="createCus.controls.customerType.hasError('required') && createCus.controls.customerType.touched">
               Không đc để trống

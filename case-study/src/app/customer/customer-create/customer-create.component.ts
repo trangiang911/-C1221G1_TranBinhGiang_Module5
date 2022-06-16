@@ -5,7 +5,9 @@ import {customerType} from '../../data/customerType';
 import {Router} from "@angular/router";
 import {CustomerListComponent} from "../customer-list/customer-list.component";
 import {customers} from "../../data/customer";
-import {CustomerService} from "../../services/customer.service";
+import {CustomerService} from "../customer.service";
+import {CustomerTypeService} from "../customer-type.service";
+import {CustomerType} from "../../models/customer-type";
 
 @Component({
   selector: 'app-customer-create',
@@ -13,10 +15,9 @@ import {CustomerService} from "../../services/customer.service";
   styleUrls: ['./customer-create.component.css'],
 })
 export class CustomerCreateComponent implements OnInit {
-  public customers = this.customerService.getAllCustomer();
-  public customerType = customerType;
+  customerTypes: CustomerType[];
   createCus = new FormGroup({
-    id: new FormControl(this.customers[this.customers.length - 1].id + 1),
+    id: new FormControl(),
     name: new FormControl('',[Validators.required,Validators.pattern(/^[A-Z][a-z]+(\s[A-Z][a-z]+)*$/)]),
     code: new FormControl('',[Validators.required,Validators.pattern(/^(KH-)\d{4}$/)]),
     birthday: new FormControl('',[Validators.required,Validators.pattern(/^\d{4}-\d{2}-\d{2}$/)]),
@@ -25,25 +26,32 @@ export class CustomerCreateComponent implements OnInit {
     email: new FormControl('',[Validators.required,Validators.email]),
     address: new FormControl('',[Validators.required]),
     gender: new FormControl(-1,[Validators.required]),
-    customerType: new FormControl(this.customerType[0],[Validators.required]),
-    // customerType: new FormGroup({
-    //   id: new FormControl(),
-    //   type: new FormControl(),
-    // }),
+    customerType: new FormControl("",[Validators.required]),
   });
 
   constructor(private customerService: CustomerService,
+              private customerTypeService: CustomerTypeService,
               private route: Router) {
   }
 
   ngOnInit(): void {
+    this.getAllCustomerType();
   }
 
+  getAllCustomerType(){
+    this.customerTypeService.getAllCustomerType().subscribe(customerTypes => {
+      this.customerTypes = customerTypes;
+      console.log(this.customerTypes);
+    }, error => {
+      console.log(error)
+    });
+  }
   onSubmit() {
-    console.log(this.createCus.value);
+    const customer = this.createCus.value;
     if(this.createCus.valid){
-      this.customerService.createCustomer( this.createCus.value);
-      this.route.navigate(['/customer-list']);
+      this.customerService.createCustomer( customer).subscribe(() => {
+        this.route.navigate(['/customer/list']);
+      });
     }else {
       alert('Ko ổn rồi đại vương')
     }

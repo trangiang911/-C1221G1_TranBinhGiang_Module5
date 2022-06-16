@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {contracts} from '../../data/contract';
-import {ContractService} from "../../services/contract.service";
+import {ContractService} from "../contract.service";
 import {Contract} from "../../models/contract";
 
 @Component({

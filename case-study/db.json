@@ -1,0 +1,119 @@
+{
+  "customer": [
+    {
+      "id": 6,
+      "code": "KH-0006",
+      "name": "Tôn Nữ Mộc Châu",
+      "birthday": "2005-12-06",
+      "gender": 0,
+      "idCard": "732434215",
+      "phone": "0988888844",
+      "email": "thihao07@gmail.com",
+      "address": "23 Nguyễn Hoàng, Đà Nẵng",
+      "customerType": {
+        "id": 5,
+        "type": "Member"
+      }
+    },
+    {
+      "id": 7,
+      "code": "KH-0007",
+      "name": "Nguyễn Mỹ Kim",
+      "birthday": "1984-04-08",
+      "gender": 0,
+      "idCard": "856453123",
+      "phone": "0912345698",
+      "email": "thihao07@gmail.com",
+      "address": "23 Nguyễn Hoàng, Đà Nẵng",
+      "customerType": {
+        "id": 4,
+        "type": "Silver"
+      }
+    },
+    {
+      "id": 8,
+      "code": "KH-0008",
+      "name": "Nguyễn Thị Hào",
+      "birthday": "1999-04-08",
+      "gender": 0,
+      "idCard": "965656433",
+      "phone": "0763212345",
+      "email": "thihao07@gmail.com",
+      "address": "23 Nguyễn Hoàng, Đà Nẵng",
+      "customerType": {
+        "id": 3,
+        "type": "Gold"
+      }
+    },
+    {
+      "id": 9,
+      "code": "KH-0009",
+      "name": "Trần Đại Danh",
+      "birthday": "1994-07-01",
+      "gender": 1,
+      "idCard": "432341235",
+      "phone": "0643343433",
+      "email": "thihao07@gmail.com",
+      "address": "23 Nguyễn Hoàng, Đà Nẵng",
+      "customerType": {
+        "id": 2,
+        "type": "Platinum"
+      }
+    },
+    {
+      "id": 10,
+      "code": "KH-0010",
+      "name": "Nguyễn Tâm Đắc",
+      "birthday": "1989-07-01",
+      "gender": 1,
+      "idCard": "344343432",
+      "phone": "0987654321",
+      "email": "thihao07@gmail.com",
+      "address": "23 Nguyễn Hoàng, Đà Nẵng",
+      "customerType": {
+        "id": 1,
+        "type": "Diamond"
+      }
+    },
+    {
+      "id": 11,
+      "name": "Trn Binh Giang",
+      "code": "KH-0011",
+      "birthday": "2022-06-11",
+      "idCard": "123356789",
+      "phone": "0901111111",
+      "email": "tranziang12345@gmail.com",
+      "address": "hue",
+      "gender": "1",
+      "customerType": {
+        "id": 1,
+        "type": "Diamond"
+      }
+    }
+  ],
+  "customerType": [
+    {
+      "id": 1,
+      "type": "Diamond"
+    },
+    {
+      "id": 2,
+      "type": "Platinum"
+    },
+    {
+      "id": 3,
+      "type": "Gold"
+    },
+    {
+      "id": 4,
+      "type": "Silver"
+    },
+    {
+      "id": 5,
+      "type": "Member"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {Contract} from "../../models/contract";
-import {ContractService} from "../../services/contract.service";
+import {ContractService} from "../contract.service";
 import {Facility} from "../../models/facility";
-import {FacilityService} from "../../services/facility.service";
+import {FacilityService} from "../../facility/facility.service";
 import {Customer} from "../../models/customer";
-import {CustomerService} from "../../services/customer.service";
+import {CustomerService} from "../../customer/customer.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Facility} from "../../models/facility";
 import {FormControl, FormGroup} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
-import {FacilityService} from "../../services/facility.service";
+import {FacilityService} from "../facility.service";
 import {facilityType} from "../../data/facilityType";
 import {rentType} from "../../data/rentType";
 import {FacilityType} from "../../models/facilityType";

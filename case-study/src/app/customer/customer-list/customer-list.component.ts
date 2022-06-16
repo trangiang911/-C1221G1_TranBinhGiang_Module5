@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Customer} from "../../models/customer";
-import {CustomerService} from "../../services/customer.service";
+import {CustomerService} from "../customer.service";
 
 @Component({
   selector: 'app-customer-list',
@@ -10,24 +10,29 @@ import {CustomerService} from "../../services/customer.service";
 export class CustomerListComponent implements OnInit {
   public customers: Array<Customer> = [];
   contentDelete: string;
-  idDel: number;
+  id: number;
+  p: string | number;
 
   constructor(private customerService: CustomerService) {
   }
 
   ngOnInit(): void {
     console.log(this.customerService.getAllCustomer())
-    this.customers = this.customerService.getAllCustomer();
+    this.customerService.getAllCustomer().subscribe(customers => {
+      this.customers = customers
+    });
   }
 
   delete(name: string, id: number) {
     this.contentDelete = name;
-    this.idDel = id;
+    this.id = id;
   }
 
 
-  remove(idDel: number) {
-    this.customerService.removeByid(idDel);
-    this.ngOnInit();
+  remove(id: number) {
+    this.customerService.removeByid(id).subscribe(() => {
+      this.ngOnInit();
+    });
+
   }
 }

@@ -15,13 +15,13 @@
 <!--================Banner Area =================-->
 <!-- ================ Explore section start ================= -->
 <section class="section-margin section-margin--small">
-  <form [formGroup]="editCus" (ngSubmit)="onSubmit()">
+  <form [formGroup]="editCus" (ngSubmit)="onSubmit(id)">
     <div class="container">
       <div class="section-intro text-center pb-80px">
         <div class="section-intro__style">
           <img alt="" src="img/home/user.png">
         </div>
-        <h2>Create New Customer</h2>
+        <h2>Update Customer</h2>
       </div>
       <div class="col-8 mx-auto">
         <div class="mx-auto shadow-lg p-3 mb-5 bg-white rounded-lg">
@@ -135,7 +135,7 @@
           </div>
           <div class="d-flex justify-content-center">
             <div class="mx-2">
-              <a href="#" class="button button--cancel cancel-banner-btn">Cancel</a>
+              <a [routerLink]="['/customer/list']" class="button button--cancel cancel-banner-btn">Cancel</a>
             </div>
             <div class="mx-2">
               <!--            <a href="#" class="button button&#45;&#45;active home-banner-btn" (click)="createCustomer()">Create</a>-->
