@@ -16,7 +16,7 @@ import {Router} from "@angular/router";
 export class ContractCreateComponent implements OnInit {
   public contracts: Array<Contract> = this.contractService.getAllContracts();
   public facilitys: Array<Facility> = this.facilityService.getAllFacility();
-  public customers: Array<Customer> = this.customerService.getAllCustomer();
+  public customers: Customer[];
   createContract= new FormGroup({
     id: new FormControl(this.contracts[this.contracts.length - 1].id+1),
     startDate: new FormControl('t',[Validators.required]),
@@ -33,7 +33,11 @@ export class ContractCreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  getAllCustomer(){
+    this.customerService.getAllCustomer().subscribe(customers =>{
+this.customers = customers;
+    });
+  }
   onSubmit() {
     console.log(this.createContract.value);
     if(this.createContract.valid){
