@@ -29,5 +29,9 @@ export class CustomerService {
   removeByid(idDel: number): Observable<Customer> {
     return this.http.delete<Customer>(`${API_URL}/customer/${idDel}`)
   }
+
+  search(value: any, value2: any, value3: any):Observable<Customer[]> {
+    return this.http.get<Customer[]>(`${API_URL}/customer?name_like=${value}&phone_like=${value2}&customerType.type_like=${value3}`)
+  }
 }
 

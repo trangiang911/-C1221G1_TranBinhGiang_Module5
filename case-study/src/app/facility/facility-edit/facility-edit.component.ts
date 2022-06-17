@@ -52,7 +52,7 @@ export class FacilityEditComponent implements OnInit {
   onSubmit() {
 
         this.facilityService.update(this.editFacility.value)
-        this.router.navigate(['/facility-list'])
+        this.router.navigate(['/facility/list'])
         this.ngOnInit()
 
   }
