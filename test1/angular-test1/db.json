@@ -1,0 +1,91 @@
+{
+  "transaction": [
+    {
+      "id": 1,
+      "code": "MGD-0001",
+      "codeCustomer": {
+        "id": 1,
+        "code": "KH-0001",
+        "name": "Nguyễn Văn A",
+        "phone": "0388868849",
+        "email": "tbg@gmail.com"
+      },
+      "startDate": "2020-18-06",
+      "facilityType": {
+        "id": 1,
+        "type": "Nhà Đất"
+      },
+      "price": 2000000,
+      "area": 100
+    },
+    {
+      "id": 2,
+      "code": "MGD-0002",
+      "codeCustomer": {
+        "id": 2,
+        "code": "KH-0002",
+        "name": "Nguyễn Văn B",
+        "phone": "0388868849",
+        "email": "tbg@gmail.com"
+      },
+      "startDate": "2020-18-06",
+      "facilityType": {
+        "id": 2,
+        "type": "Đất"
+      },
+      "price": 2000000,
+      "area": 100
+    },
+    {
+      "id": 3,
+      "code": "MGD-0003",
+      "codeCustomer": {
+        "id": 1,
+        "code": "KH-0003",
+        "name": "Nguyễn Văn C",
+        "phone": "0388868849",
+        "email": "tbg@gmail.com"
+      },
+      "startDate": "2020-18-06",
+      "facilityType": {
+        "id": 1,
+        "type": "Nhà Đất"
+      },
+      "price": 2000000,
+      "area": 100
+    }
+  ],
+  "customers": [
+    {
+      "id": 1,
+      "code": "KH-0001",
+      "name": "Nguyễn Văn A",
+      "phone": "0388868849",
+      "email": "tbg@gmail.com"
+    },
+    {
+      "id": 2,
+      "code": "KH-0002",
+      "name": "Nguyễn Văn B",
+      "phone": "0388868849",
+      "email": "tbg@gmail.com"
+    },
+    {
+      "id": 3,
+      "code": "KH-0003",
+      "name": "Nguyễn Văn C",
+      "phone": "0388868849",
+      "email": "tbg@gmail.com"
+    }
+  ],
+  "facilityType": [
+    {
+      "id": 1,
+      "type": "Nhà Đất"
+    },
+    {
+      "id": 2,
+      "type": "Đất"
+    }
+  ]
+}

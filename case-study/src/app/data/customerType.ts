@@ -2,23 +2,23 @@ import {CustomerType} from '../models/customer-type';
 
 export const customerType: CustomerType[] = [
   {
-    id: 1,
-    type: 'Diamond'
+    customerTypeId: 1,
+    customerTypeName: 'Diamond'
   },
   {
-    id: 2,
-    type: 'Platinum'
+    customerTypeId: 2,
+    customerTypeName: 'Platinum'
   },
   {
-    id: 3,
-    type: 'Gold'
+    customerTypeId: 3,
+    customerTypeName: 'Gold'
   },
   {
-    id: 4,
-    type: 'Silver'
+    customerTypeId: 4,
+    customerTypeName: 'Silver'
   },
   {
-    id: 5,
-    type: 'Member'
+    customerTypeId: 5,
+    customerTypeName: 'Member'
   }
 ];

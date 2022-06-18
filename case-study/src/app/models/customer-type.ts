@@ -1,4 +1,4 @@
 export interface CustomerType {
-  id: number;
- type: string;
+  customerTypeId: number;
+  customerTypeName: string;
 }

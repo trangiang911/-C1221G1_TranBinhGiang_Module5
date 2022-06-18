@@ -23,8 +23,14 @@ export class CustomerListComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.customerService.getAllCustomer())
     this.customerService.getAllCustomer().subscribe(customers => {
-      this.customers = customers
+      // @ts-ignore
+      this.customers = customers.content;
     });
+    // this.customerService.search("",
+    //   "",
+    //   "").subscribe(customers => this.customers = customers,
+    //   () => {},
+    //   () =>this.ngOnInit);
   }
 
   delete(name: string, id: number) {
@@ -47,7 +53,6 @@ export class CustomerListComponent implements OnInit {
     this.customerService.search(this.keySearch1.nativeElement.value,
       this.keySearch2.nativeElement.value,
       this.keySearch3.nativeElement.value).subscribe(customers => this.customers = customers,
-      () => {},
-      () =>this.ngOnInit);
+      () => {});
   }
 }

@@ -57,7 +57,7 @@
             <select class="form-control"
                     id="customer"
                     name="customer" formControlName="customer">
-              <option *ngFor="let item of customers" [ngValue]="item">{{item.name}}</option>
+              <option *ngFor="let item of customers" [ngValue]="item">{{item.customerName}}</option>
             </select>
             <p style="color: red" *ngIf="createContract.controls.customer.hasError('required') && createContract.controls.customer.touched">
               Không đc để trống

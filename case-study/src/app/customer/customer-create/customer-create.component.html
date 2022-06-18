@@ -27,11 +27,11 @@
         <div class="form-group row">
           <label for="name" class="col-sm-3 col-form-label">Name</label>
           <div class="col-sm-9">
-            <input type="text" class="form-control" id="name" name="name" formControlName="name">
-            <p style="color: red" *ngIf="createCus.controls.name.hasError('pattern') && createCus.controls.name.touched">
+            <input type="text" class="form-control" id="name" name="name" formControlName="customerName">
+            <p style="color: red" *ngIf="createCus.controls.customerName.hasError('pattern') && createCus.controls.customerName.touched">
               Tên phải đúng format Nguyen Van A
             </p>
-            <p style="color: red" *ngIf="createCus.controls.name.hasError('required') && createCus.controls.name.touched">
+            <p style="color: red" *ngIf="createCus.controls.customerName.hasError('required') && createCus.controls.customerName.touched">
               Không đc để trống
             </p>
           </div>
@@ -49,73 +49,73 @@
           </div>
         </div>
         <div class="form-group row">
-          <label for="birthday" class="col-sm-3 col-form-label">Birthday</label>
+          <label for="customerBirthday" class="col-sm-3 col-form-label">customerBirthday</label>
           <div class="col-sm-9">
-            <input type="date" class="form-control" id="birthday" name="birthday" formControlName="birthday">
-            <p style="color: red" *ngIf="createCus.controls.birthday.hasError('required') && createCus.controls.birthday.touched">
+            <input type="date" class="form-control" id="customerBirthday" name="customerBirthday" formControlName="customerBirthday">
+            <p style="color: red" *ngIf="createCus.controls.customerBirthday.hasError('required') && createCus.controls.customerBirthday.touched">
               Không đc để trống
             </p>
-            <p style="color: red" *ngIf="createCus.controls.birthday.hasError('pattern') && createCus.controls.birthday.touched">
+            <p style="color: red" *ngIf="createCus.controls.customerBirthday.hasError('pattern') && createCus.controls.customerBirthday.touched">
               Không đúng format dd/mm/yyyy
             </p>
           </div>
         </div>
         <div class="form-group row">
-          <label for="idCard" class="col-sm-3 col-form-label">Id card</label>
+          <label for="customerIdCard" class="col-sm-3 col-form-label">Id card</label>
           <div class="col-sm-9">
-            <input type="text" class="form-control" id="idCard" name="idCard" formControlName="idCard">
-            <p style="color: red" *ngIf="createCus.controls.idCard.hasError('required') && createCus.controls.idCard.touched">
+            <input type="text" class="form-control" id="customerIdCard" name="customerIdCard" formControlName="customerIdCard">
+            <p style="color: red" *ngIf="createCus.controls.customerIdCard.hasError('required') && createCus.controls.customerIdCard.touched">
               Không đc để trống
             </p>
-            <p style="color: red" *ngIf="createCus.controls.idCard.hasError('pattern') && createCus.controls.idCard.touched">
+            <p style="color: red" *ngIf="createCus.controls.customerIdCard.hasError('pattern') && createCus.controls.customerIdCard.touched">
               Không đcđúng format XXXXXXXXX hoặc XXXXXXXXXXX
             </p>
           </div>
         </div>
         <div class="form-group row">
-          <label for="phone" class="col-sm-3 col-form-label">Phone</label>
+          <label for="customerPhone" class="col-sm-3 col-form-label">customerPhone</label>
           <div class="col-sm-9">
-            <input type="text" class="form-control" id="phone" name="phone" formControlName="phone">
-            <p style="color: red" *ngIf="createCus.controls.phone.hasError('required') && createCus.controls.phone.touched">
+            <input type="text" class="form-control" id="customerPhone" name="customerPhone" formControlName="customerPhone">
+            <p style="color: red" *ngIf="createCus.controls.customerPhone.hasError('required') && createCus.controls.customerPhone.touched">
               Không đc để trống
             </p>
-            <p style="color: red" *ngIf="createCus.controls.phone.hasError('pattern') && createCus.controls.phone.touched">
+            <p style="color: red" *ngIf="createCus.controls.customerPhone.hasError('pattern') && createCus.controls.customerPhone.touched">
               Không đúng format 090XXXXXX 091XXXXXXX hoặc ()
             </p>
           </div>
         </div>
         <div class="form-group row">
-          <label for="email" class="col-sm-3 col-form-label">Email</label>
+          <label for="customerEmail" class="col-sm-3 col-form-label">customerEmail</label>
           <div class="col-sm-9">
-            <input type="email" class="form-control" id="email" name="email" formControlName="email">
-            <p style="color: red" *ngIf="createCus.controls.email.hasError('required') && createCus.controls.email.touched">
+            <input type="customerEmail" class="form-control" id="customerEmail" name="customerEmail" formControlName="customerEmail">
+            <p style="color: red" *ngIf="createCus.controls.customerEmail.hasError('required') && createCus.controls.customerEmail.touched">
               Không đc để trống
             </p>
-            <p style="color: red" *ngIf="createCus.controls.email.hasError('pattern') && createCus.controls.email.touched">
-              Không đúng format email chuẩn quốc tế
+            <p style="color: red" *ngIf="createCus.controls.customerEmail.hasError('pattern') && createCus.controls.customerEmail.touched">
+              Không đúng format customerEmail chuẩn quốc tế
             </p>
           </div>
         </div>
         <div class="form-group row">
-          <label for="address" class="col-sm-3 col-form-label">Address</label>
+          <label for="customerAddress" class="col-sm-3 col-form-label">customerAddress</label>
           <div class="col-sm-9">
-            <input type="text" class="form-control" id="address" name="address" formControlName="address">
-            <p style="color: red" *ngIf="createCus.controls.address.hasError('required') && createCus.controls.address.touched">
+            <input type="text" class="form-control" id="customerAddress" name="customerAddress" formControlName="customerAddress">
+            <p style="color: red" *ngIf="createCus.controls.customerAddress.hasError('required') && createCus.controls.customerAddress.touched">
               Không đc để trống
             </p>
           </div>
         </div>
         <div class="form-group row">
-          <label for="gender" class="col-sm-3 col-form-label">Gender</label>
+          <label for="customerGender" class="col-sm-3 col-form-label">customerGender</label>
           <div class="col-sm-9">
             <select class="form-control"
-                    id="gender"
-                    name="gender" formControlName="gender">
+                    id="customerGender"
+                    name="customerGender" formControlName="customerGender">
               <option value="-1">Other</option>
               <option value="0">Female</option>
               <option value="1">Male</option>
             </select>
-            <p style="color: red" *ngIf="createCus.controls.gender.hasError('required') && createCus.controls.gender.touched">
+            <p style="color: red" *ngIf="createCus.controls.customerGender.hasError('required') && createCus.controls.customerGender.touched">
               Không đc để trống
             </p>
           </div>
@@ -126,7 +126,7 @@
             <select id="customerType"
                     class="form-control" name="type" formControlName="customerType">
               <option value="">Choice</option>
-              <option *ngFor="let item of customerTypes" [ngValue]="item">{{item.type}}</option>
+              <option *ngFor="let item of customerTypes" [ngValue]="item">{{item.customerTypeName}}</option>
             </select>
             <p style="color: red" *ngIf="createCus.controls.customerType.hasError('required') && createCus.controls.customerType.touched">
               Không đc để trống

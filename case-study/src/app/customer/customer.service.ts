@@ -3,7 +3,8 @@ import {Customer} from "../models/customer";
 import {environment} from "../../environments/environment";
 import {Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
-const API_URL = `${environment.apiUrl}`
+const API_URL = `${environment.apiUrl}`;
+const API_URL_JAVA =`${environment.apiUrlJava}`
 @Injectable({
   providedIn: 'root'
 })
@@ -13,7 +14,7 @@ export class CustomerService {
   }
 
   public createCustomer( customer: Customer): Observable<Customer> {
-    return this.http.post<Customer>(API_URL + `/customer`,customer)
+    return this.http.post<Customer>(API_URL_JAVA + `/customers/create-customer`,customer)
   }
   public findCustomerById(id: number): Observable<Customer>{
     return this.http.get<Customer>(`${API_URL}/customer/${id}`);
@@ -23,7 +24,7 @@ export class CustomerService {
     return this.http.put<Customer>(`${API_URL}/customer/${id}`,customer)
   }
   public getAllCustomer():Observable<Customer[]>{
-    return this.http.get<Customer[]>(API_URL + `/customer`);
+    return this.http.get<Customer[]>(API_URL_JAVA + `/customers/list-customer`);
   }
 
   removeByid(idDel: number): Observable<Customer> {

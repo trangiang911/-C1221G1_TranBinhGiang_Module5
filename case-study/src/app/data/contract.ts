@@ -8,18 +8,18 @@ export const contracts: Contract[] = [
     deposit: 0,
     total: 1000000,
     customer: {
-      id: 1,
+      customerId: 1,
       code: 'KH-0001',
-      name: 'Nguyễn Thị Hào',
-      birthday: '1970-11-07',
-      gender: 0,
-      idCard: '643431213',
-      phone: '0905423362',
-      email: 'thihao07@gmail.com',
-      address: '23 Nguyễn Hoàng, Đà Nẵng',
+      customerName: 'Nguyễn Thị Hào',
+      customerBirthday: '1970-11-07',
+      customerGender: 0,
+      customerIdCard: '643431213',
+      customerPhone: '0905423362',
+      customerEmail: 'thihao07@gmail.com',
+      customerAddress: '23 Nguyễn Hoàng, Đà Nẵng',
       customerType: {
-        id: 5,
-        type: 'Member'
+        customerTypeId: 5,
+        customerTypeName: 'Member'
       }
     },
     facility: {
@@ -36,27 +36,27 @@ export const contracts: Contract[] = [
     deposit: 200000,
     total: 2000000,
     customer: {
-      id: 3,
+      customerId: 3,
 
       code: 'KH-0003',
 
-      name: 'Trương Đình Nghệ',
+      customerName: 'Trương Đình Nghệ',
 
-      birthday: '1990-02-27',
+      customerBirthday: '1990-02-27',
 
-      gender: 1,
+      customerGender: 1,
 
-      idCard: '488645199',
+      customerIdCard: '488645199',
 
-      phone: '0373213122',
+      customerPhone: '0373213122',
 
-      email: 'nghenhan2702@gmail.com',
+      customerEmail: 'nghenhan2702@gmail.com',
 
-      address: 'K323/12 Ông Ích Khiêm, Vinh',
+      customerAddress: 'K323/12 Ông Ích Khiêm, Vinh',
 
       customerType: {
-        id: 3,
-        type: 'Gold'
+        customerTypeId: 3,
+        customerTypeName: 'Gold'
       }
     },
     facility: {
@@ -73,27 +73,27 @@ export const contracts: Contract[] = [
     deposit: 50000,
     total: 1500000,
     customer: {
-      id: 4,
+      customerId: 4,
 
       code: 'KH-0004',
 
-      name: 'Dương Văn Quan',
+      customerName: 'Dương Văn Quan',
 
-      birthday: '1981-07-08',
+      customerBirthday: '1981-07-08',
 
-      gender: 1,
+      customerGender: 1,
 
-      idCard: '543432111',
+      customerIdCard: '543432111',
 
-      phone: '0490039241',
+      customerPhone: '0490039241',
 
-      email: 'duongquan@gmail.com',
+      customerEmail: 'duongquan@gmail.com',
 
-      address: 'K453/12 Lê Lợi, Đà Nẵng',
+      customerAddress: 'K453/12 Lê Lợi, Đà Nẵng',
 
       customerType: {
-        id: 2,
-        type: 'Platinium'
+        customerTypeId: 2,
+        customerTypeName: 'Platinium'
       }
     },
     facility: {
@@ -110,27 +110,27 @@ export const contracts: Contract[] = [
     deposit: 100000,
     total: 1400000,
     customer: {
-      id: 5,
+      customerId: 5,
 
       code: 'KH-0005',
 
-      name: 'Hoàng Trần Nhi Nhi',
+      customerName: 'Hoàng Trần Nhi Nhi',
 
-      birthday: '1995-12-09',
+      customerBirthday: '1995-12-09',
 
-      gender: 0,
+      customerGender: 0,
 
-      idCard: '795453345',
+      customerIdCard: '795453345',
 
-      phone: '0312345678',
+      customerPhone: '0312345678',
 
-      email: 'nhinhi123@gmail.com',
+      customerEmail: 'nhinhi123@gmail.com',
 
-      address: '224 Lý Thái Tổ, Gia Lai',
+      customerAddress: '224 Lý Thái Tổ, Gia Lai',
 
       customerType: {
-        id: 1,
-        type: 'Diamond'
+        customerTypeId: 1,
+        customerTypeName: 'Diamond'
       }
     },
     facility: {
@@ -146,27 +146,27 @@ export const contracts: Contract[] = [
     deposit: 0,
     total: 100000,
     customer: {
-      id: 2,
+      customerId: 2,
 
       code: 'KH-0002',
 
-      name: 'Phạm Xuân Diệu',
+      customerName: 'Phạm Xuân Diệu',
 
-      birthday: '1992-08-08',
+      customerBirthday: '1992-08-08',
 
-      gender: 1,
+      customerGender: 1,
 
-      idCard: '865342123',
+      customerIdCard: '865342123',
 
-      phone: '0954333333',
+      customerPhone: '0954333333',
 
-      email: 'xuandieu92@gmail.com',
+      customerEmail: 'xuandieu92@gmail.com',
 
-      address: 'K77/22 Thái Phiên, Quảng Trị',
+      customerAddress: 'K77/22 Thái Phiên, Quảng Trị',
 
       customerType: {
-        id: 4,
-        type: 'Silver'
+        customerTypeId: 4,
+        customerTypeName: 'Silver'
       }
     },
     facility: {
