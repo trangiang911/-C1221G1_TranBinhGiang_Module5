@@ -53,6 +53,24 @@
       },
       "price": 2000000,
       "area": 100
+    },
+    {
+      "id": 4,
+      "code": "Trần Bình Giảng",
+      "codeCustomer": {
+        "id": 1,
+        "code": "KH-0001",
+        "name": "Nguyễn Văn A",
+        "phone": "0388868849",
+        "email": "tbg@gmail.com"
+      },
+      "facilityType": {
+        "id": 1,
+        "type": "Nhà Đất"
+      },
+      "startDate": "2022-06-12",
+      "price": "1000",
+      "area": "12"
     }
   ],
   "customers": [

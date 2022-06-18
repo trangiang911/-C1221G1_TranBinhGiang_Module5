@@ -7,11 +7,14 @@ import { TransactionListComponent } from './land_transaction/transaction-list/tr
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {NgxPaginationModule} from "ngx-pagination";
+import { RouterModule} from "@angular/router";
+import { TransactionCreateComponent } from './land_transaction/transaction-create/transaction-create.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TransactionListComponent
+    TransactionListComponent,
+    TransactionCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -20,6 +23,7 @@ import {NgxPaginationModule} from "ngx-pagination";
     ReactiveFormsModule,
     HttpClientModule,
     NgxPaginationModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

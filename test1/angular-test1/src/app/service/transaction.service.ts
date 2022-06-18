@@ -4,7 +4,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {GiaoDich} from "../model/giao-dich";
 
-const API_URL = `${environment}`
+const API_URL = `${environment.apiUrl}`
 @Injectable({
   providedIn: 'root'
 })
@@ -16,6 +16,10 @@ export class TransactionService {
   search(value: any, value2: any):Observable<GiaoDich[]> {
     console.log(value);
     console.log(value2);
-    return this.http.get<GiaoDich[]>(`${API_URL}/transaction?facilityType.id_like=${value}&codeCustomer.name_like=${value2}`)
+    return this.http.get<GiaoDich[]>(`${API_URL}/transaction?codeCustomer.name_like=${value}&facilityType.id_like=${value2}`)
+  }
+
+  save(trans: GiaoDich):Observable<GiaoDich> {
+    return this.http.post<GiaoDich>(`${API_URL}/transaction`,trans)
   }
 }

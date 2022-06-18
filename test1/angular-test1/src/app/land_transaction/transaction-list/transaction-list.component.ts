@@ -24,11 +24,15 @@ export class TransactionListComponent implements OnInit {
       '',
       '').subscribe(transactions => this.transactions = transactions)
     this.facilityTypeService.getAllFacilityType().subscribe(type => this.facilityType = type);
+    console.log(this.transactions);
+    console.log(this.facilityType);
   }
 
   search() {
     this.transactionService.search(
       this.keySearch1.nativeElement.value,
-      this.keySearch2.nativeElement.value).subscribe(transactions => this.transactions = transactions)
+      this.keySearch2.nativeElement.value).subscribe(transactions => this.transactions = transactions,() =>
+    {})
+    console.log(this.transactions)
   }
 }
