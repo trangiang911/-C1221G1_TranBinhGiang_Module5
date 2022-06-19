@@ -9,12 +9,14 @@ import {HttpClientModule} from "@angular/common/http";
 import {NgxPaginationModule} from "ngx-pagination";
 import { RouterModule} from "@angular/router";
 import { TransactionCreateComponent } from './land_transaction/transaction-create/transaction-create.component';
+import { TransactionEditComponent } from './land_transaction/transaction-edit/transaction-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TransactionListComponent,
-    TransactionCreateComponent
+    TransactionCreateComponent,
+    TransactionEditComponent
   ],
   imports: [
     BrowserModule,

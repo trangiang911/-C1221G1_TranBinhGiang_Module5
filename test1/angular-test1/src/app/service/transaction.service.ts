@@ -10,6 +10,7 @@ const API_URL = `${environment.apiUrl}`
 })
 export class TransactionService {
 
+
   constructor(private http: HttpClient) { }
 
 
@@ -21,5 +22,21 @@ export class TransactionService {
 
   save(trans: GiaoDich):Observable<GiaoDich> {
     return this.http.post<GiaoDich>(`${API_URL}/transaction`,trans)
+  }
+
+  getAllTrans():Observable<GiaoDich[]>{
+    return this.http.get<GiaoDich[]>(`${API_URL}/transaction`)
+  }
+
+  findTransactionById(id: number):Observable<GiaoDich> {
+    return this.http.get<GiaoDich>(`${API_URL}/transaction/${id}`)
+  }
+
+  updateTransaction(transaction: GiaoDich, id: number):Observable<GiaoDich> {
+    return this.http.put<GiaoDich>(`${API_URL}/transaction/${id}`,transaction)
+  }
+
+  deleteTransaction(id: number):Observable<GiaoDich> {
+    return this.http.delete<GiaoDich>(`${API_URL}/transaction/${id}`)
   }
 }

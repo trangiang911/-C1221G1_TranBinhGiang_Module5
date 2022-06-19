@@ -13,10 +13,11 @@
           <div class="form-group row">
             <label for="name" class="col-sm-3 col-form-label">Mã giao dịch</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" id="name" name="name" formControlName="code">
-              <p style="color: red" *ngIf="createTrans.controls.code.hasError('required') && createTrans.controls.code.touched">
+              <input type="text" class="form-control" id="name" name="name" formControlName="code" (change)="onChange($event.target.value)">
+              <p style="color: red" *ngIf="createTrans.controls.code.hasError('required') && (createTrans.controls.code.touched || submited)">
                 Không đc để trống
               </p>
+              <p *ngIf="!check" style="color: red">Trùng mã giao dịch</p>
             </div>
           </div>
           <div class="form-group row">
@@ -43,6 +44,12 @@
             <label for="startDate" class="col-sm-3 col-form-label">Ngày giao dịch</label>
             <div class="col-sm-9">
               <input type="date" class="form-control" id="startDate" name="startDate" formControlName="startDate">
+              <p style="color: red" *ngIf="createTrans.controls.startDate.hasError('validDate') && (createTrans.controls.startDate.touched || submited)">
+                Ngày giao dịch ko đc là ngày quá khứ
+              </p>
+              <p style="color: red" *ngIf="createTrans.controls.startDate.hasError('required') && (createTrans.controls.startDate.touched || submited)">
+                Không đc để trống
+              </p>
             </div>
           </div>
           <div class="form-group row">
@@ -67,9 +74,6 @@
           </div>
         </div>
       </div>
-    </div>
-    <div>
-      <h4>Copyright: Phạm Việt Khoa-C1221G1</h4>
     </div>
   </form>
 </section>

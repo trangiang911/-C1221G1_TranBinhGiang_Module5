@@ -17,15 +17,17 @@ import validate = WebAssembly.validate;
   styleUrls: ['./transaction-create.component.css']
 })
 export class TransactionCreateComponent implements OnInit {
+  public submited = false;
   public transactions: GiaoDich[] = [];
   public facilityType: FacilityType[] = [];
   public customers: KhachHang[] = [];
+  public check = true;
   createTrans = new FormGroup({
     id: new FormControl(),
-    code: new FormControl('',[Validators.required]),
+    code: new FormControl('',[Validators.required,Validators.pattern(/^(MGD-)\d{4}$/)]),
     codeCustomer: new FormControl(),
     facilityType: new FormControl(),
-    startDate: new FormControl(),
+    startDate: new FormControl('',[Validators.required,this.validateStartDate]),
     price: new FormControl(),
     area: new FormControl(),
   });
@@ -37,27 +39,39 @@ export class TransactionCreateComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.transactionService.getAllTrans().subscribe(trans => this.transactions = trans)
     this.facilityTypeService.getAllFacilityType().subscribe(type => this.facilityType = type);
     this.customerService.getAllCustomer().subscribe(cus => this.customers = cus);
-    this.createTrans.get('code').value
   }
 
   onSubmit() {
+    this.submited = true
     const trans = this.createTrans.value;
-    if (this.createTrans.valid) {
+    if (this.createTrans.valid && this.check) {
       this.transactionService.save(trans).subscribe(() => this.route.navigate([`/transaction-list`]))
     } else {
       alert('ko ổn rồi đại vương')
     }
   }
-  validatorDate(code: AbstractControl) {
-    const codeVal = code.value;
-    let trans: GiaoDich[] = [];
-    this.transactionService.search('','').subscribe(tran => trans = tran)
-    if(trans.find(x => x.code === codeVal)){
-      return {check: true}
+
+  onChange(value: string) {
+    console.log(this.transactions)
+    console.log(value);
+    if(this.transactions.find(x => x.code === value)){
+      console.log('trùng rồi');
+      this.check = false;
+    }else {
+      this.check = true;
+    }
+  }
+  validateStartDate(startDate: AbstractControl){
+    const x =new Date(startDate.value);
+    const y = new Date(Date.now());
+    if(x < y){
+      return {validDate: true}
     }else {
       return null;
     }
   }
+
 }

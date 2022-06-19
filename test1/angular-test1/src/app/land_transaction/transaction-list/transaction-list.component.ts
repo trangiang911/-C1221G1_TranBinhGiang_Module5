@@ -14,6 +14,8 @@ export class TransactionListComponent implements OnInit {
   @ViewChild('keySearch2') keySearch2: ElementRef;
   public transactions: Array<GiaoDich> = [];
   public facilityType:Array<FacilityType> = [];
+  public name:string;
+  public id:number;
   p: any;
   constructor(private transactionService: TransactionService,
               private facilityTypeService: FacilityTypeService) {
@@ -34,5 +36,14 @@ export class TransactionListComponent implements OnInit {
       this.keySearch2.nativeElement.value).subscribe(transactions => this.transactions = transactions,() =>
     {})
     console.log(this.transactions)
+  }
+
+  delete(name: string, id: number) {
+      this.id = id;
+      this.name = name;
+  }
+
+  remove(id: number) {
+    this.transactionService.deleteTransaction(id).subscribe(() => this.ngOnInit())
   }
 }
