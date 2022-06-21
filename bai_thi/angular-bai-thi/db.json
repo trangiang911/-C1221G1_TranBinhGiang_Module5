@@ -1,19 +1,29 @@
 {
-  "posts": [
+  "benxe": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "soXe": "1222",
+      "loaiXe": {
+        "id": 2,
+        "loaiXe": "Ghế ngồi"
+      },
+      "tenNhaXe": "Hoàng Long",
+      "diemDi": "Đà Nẵng",
+      "diemDen": "Quảng trị",
+      "sdt": "0935845632",
+      "email": "mailinh@gmail.com",
+      "gioDi": "13:20",
+      "gioDen": "15:00",
+      "id": 2
     }
   ],
-  "comments": [
+  "loaixe": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "loaiXe": "Giường nằm"
+    },
+    {
+      "id": 2,
+      "loaiXe": "Ghế ngồi"
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

@@ -10,6 +10,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {RouterModule} from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -19,13 +21,15 @@ import {RouterModule} from '@angular/router';
     EditComponent
   ],
     imports: [
-      BrowserModule,
-      AppRoutingModule,
-      FormsModule,
-      ReactiveFormsModule,
-      HttpClientModule,
-      NgxPaginationModule,
-      RouterModule
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        NgxPaginationModule,
+        RouterModule,
+        BrowserAnimationsModule,
+        MatPaginatorModule
     ],
   providers: [],
   bootstrap: [AppComponent]

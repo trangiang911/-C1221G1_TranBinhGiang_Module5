@@ -1,75 +1,144 @@
-<!--&lt;!&ndash; ================ Explore section start ================= &ndash;&gt;-->
-<!--<section class="section-margin section-margin&#45;&#45;small">-->
-<!--  <form [formGroup]="editTrans" (ngSubmit)="onSubmit(id)">-->
-<!--    <div class="container">-->
-<!--      <div class="section-intro text-center pb-80px">-->
-<!--        <div class="section-intro__style">-->
-<!--          <img alt="" src="img/home/user.png">-->
-<!--        </div>-->
-<!--        <h2>Create New Trans</h2>-->
-<!--      </div>-->
-<!--      <div class="col-8 mx-auto">-->
-<!--        <div class="mx-auto shadow-lg p-3 mb-5 bg-white rounded-lg">-->
-<!--          <div class="form-group row">-->
-<!--            <label for="name" class="col-sm-3 col-form-label">Mã giao dịch</label>-->
-<!--            <div class="col-sm-9">-->
-<!--              <input type="text" class="form-control" id="name" name="name" formControlName="code" (change)="onChange($event.target.value)">-->
-<!--              <p style="color: red" *ngIf="editTrans.controls.code.hasError('required') && (editTrans.controls.code.touched || submited)">-->
-<!--                Không đc để trống-->
-<!--              </p>-->
-<!--              <p *ngIf="!check" style="color: red">Trùng mã giao dịch</p>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--          <div class="form-group row">-->
-<!--            <label for="codeCustomer" class="col-sm-3 col-form-label">Tên khách hàng</label>-->
-<!--            <div class="col-sm-9">-->
-<!--              <select id="codeCustomer"-->
-<!--                      class="form-control" name="codeCustomer" formControlName="codeCustomer" [compareWith]="compareByID">-->
-<!--                <option value="">Choice</option>-->
-<!--                <option *ngFor="let item of customers" [ngValue]="item">{{item.name}}</option>-->
-<!--              </select>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--          <div class="form-group row">-->
-<!--            <label for="facilityType" class="col-sm-3 col-form-label">Loại bất động sản</label>-->
-<!--            <div class="col-sm-9">-->
-<!--              <select id="facilityType"-->
-<!--                      class="form-control" name="facilityType" formControlName="facilityType" [compareWith]="compareByID">-->
-<!--                <option value="">Choice</option>-->
-<!--                <option *ngFor="let item of facilityType" [ngValue]="item">{{item.type}}</option>-->
-<!--              </select>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--          <div class="form-group row">-->
-<!--            <label for="startDate" class="col-sm-3 col-form-label">Ngày giao dịch</label>-->
-<!--            <div class="col-sm-9">-->
-<!--              <input type="date" class="form-control" id="startDate" name="startDate" formControlName="startDate">-->
-<!--            </div>-->
-<!--          </div>-->
-<!--          <div class="form-group row">-->
-<!--            <label for="price" class="col-sm-3 col-form-label">Đơn giá</label>-->
-<!--            <div class="col-sm-9">-->
-<!--              <input type="text" class="form-control" id="price" name="price" formControlName="price">-->
-<!--            </div>-->
-<!--          </div>-->
-<!--          <div class="form-group row">-->
-<!--            <label for="area" class="col-sm-3 col-form-label">Diện tích</label>-->
-<!--            <div class="col-sm-9">-->
-<!--              <input type="text" class="form-control" id="area" name="area" formControlName="area">-->
-<!--            </div>-->
-<!--          </div>-->
-<!--          <div class="d-flex justify-content-center">-->
-<!--            <div class="mx-2">-->
-<!--              <a href="#" class="btn btn-secondary">Cancel</a>-->
-<!--            </div>-->
-<!--            <div class="mx-2">-->
-<!--              <button type="submit" class="btn btn-success">Create</button>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </form>-->
-<!--</section>-->
-<!--&lt;!&ndash; ================ Explore section end ================= &ndash;&gt;-->
+<!-- ================ Explore section start ================= -->
+<section class="section-margin section-margin--small">
+  <form [formGroup]="editBenXe" (ngSubmit)="onSubmit(id)">
+    <div class="container">
+      <div class="section-intro text-center pb-80px">
+        <div class="section-intro__style">
+          <img alt="" src="img/home/user.png">
+        </div>
+        <h2>Update danh sách các xe đăng ký</h2>
+      </div>
+      <div class="col-8 mx-auto">
+        <div class="mx-auto shadow-lg p-3 mb-5 bg-white rounded-lg">
+          <div class="form-group row">
+            <label for="soXe" class="col-sm-3 col-form-label">Số xe</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="soXe" name="soXe" formControlName="soXe" readonly>
+              <p style="color: red"
+                 *ngIf="editBenXe.controls.soXe.hasError('required') && (editBenXe.controls.soXe.touched || submited)">
+                Không đc để trống
+              </p>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="codeCustomer" class="col-sm-3 col-form-label">Loai Xe</label>
+            <div class="col-sm-9">
+              <select id="codeCustomer"
+                      class="form-control" name="codeCustomer" formControlName="loaiXe" [compareWith]="compareByID">
+                <option value="">Choice</option>
+                <option *ngFor="let item of loaiXes" [ngValue]="item">{{item.loaiXe}}</option>
+              </select>
+              <p style="color: red"
+                 *ngIf="editBenXe.controls.loaiXe.hasError('required') && (editBenXe.controls.loaiXe.touched || submited)">
+                Không đc để trống
+              </p>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="tenNhaXe" class="col-sm-3 col-form-label">Tên Nhà xe</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="tenNhaXe" name="tenNhaXe" formControlName="tenNhaXe">
+              <p style="color: red"
+                 *ngIf="editBenXe.controls.tenNhaXe.hasError('required') && (editBenXe.controls.tenNhaXe.touched || submited)">
+                Không đc để trống
+              </p>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="diemDi" class="col-sm-3 col-form-label">Điểm đi</label>
+            <div class="col-sm-9">
+              <select id="diemDi"
+                      class="form-control" name="diemDi" formControlName="diemDi" [compareWith]="compareByID">
+                <option value="">Choice</option>
+                <option value="Đà nẵng">Đà Nẵng</option>
+                <option value="Quảng Nam">Quảng Nam</option>
+              </select>
+              <p style="color: red"
+                 *ngIf="editBenXe.controls.diemDi.hasError('required') && (editBenXe.controls.diemDi.touched || submited)">
+                Không đc để trống
+              </p>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="diemDen" class="col-sm-3 col-form-label">Điểm đến</label>
+            <div class="col-sm-9">
+              <select id="diemDen"
+                      class="form-control" name="diemDen" formControlName="diemDen" [compareWith]="compareByID">
+                <option value="">Choice</option>
+                <option value="Quảng trị">Quảng trị</option>
+                <option value="Quảng bình">Quảng Bình</option>
+                <option value="Huế">Huế</option>
+              </select>
+              <p style="color: red"
+                 *ngIf="editBenXe.controls.diemDen.hasError('required') && (editBenXe.controls.diemDen.touched || submited)">
+                Không đc để trống
+              </p>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="sdt" class="col-sm-3 col-form-label">Số điện thoại</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="sdt" name="sdt" formControlName="sdt">
+              <p style="color: red"
+                 *ngIf="editBenXe.controls.sdt.hasError('required') && (editBenXe.controls.sdt.touched || submited)">
+                Không đc để trống
+              </p>
+              <p style="color: red"
+                 *ngIf="editBenXe.controls.sdt.hasError('pattern') && (editBenXe.controls.sdt.touched || submited)">
+                Không đúng định dạng (090-093-097 XXXXXXX)
+              </p>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="email" class="col-sm-3 col-form-label">Email</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="email" name="email" formControlName="email">
+              <p style="color: red"
+                 *ngIf="editBenXe.controls.email.hasError('required') && (editBenXe.controls.email.touched || submited)">
+                Không đc để trống
+              </p>
+              <p style="color: red"
+                 *ngIf="editBenXe.controls.email.hasError('email') && (editBenXe.controls.email.touched || submited)">
+                Không đúng định dạng Mail tiêu chuẩn
+              </p>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="gioDi" class="col-sm-3 col-form-label">Giờ đi</label>
+            <div class="col-sm-9">
+              <input type="time" class="form-control" id="gioDi" name="gioDi" formControlName="gioDi">
+              <p style="color: red"
+                 *ngIf="editBenXe.controls.gioDi.hasError('required') && (editBenXe.controls.gioDi.touched || submited)">
+                Không đc để trống
+              </p>
+              <p style="color: red"
+                 *ngIf="editBenXe.controls.gioDi.hasError('validTime') && (editBenXe.controls.gioDi.touched || submited)">
+                Sai rồi đó
+              </p>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="gioDen" class="col-sm-3 col-form-label">Giờ đến</label>
+            <div class="col-sm-9">
+              <input type="time" class="form-control" id="gioDen" name="gioDen" formControlName="gioDen">
+              <p style="color: red"
+                 *ngIf="editBenXe.controls.gioDen.hasError('required') && (editBenXe.controls.gioDen.touched || submited)">
+                Không đc để trống
+              </p>
+            </div>
+          </div>
+          <div class="d-flex justify-content-center">
+            <div class="mx-2">
+              <a routerLink="/list" class="btn btn-secondary">Cancel</a>
+            </div>
+            <div class="mx-2">
+              <button type="submit" class="btn btn-success">Update</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</section>
+<!-- ================ Explore section end ================= -->
 
