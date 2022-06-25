@@ -84,8 +84,25 @@
       </tr>
       </tbody>
     </table>
-    <!--        paging-->
-    <!--        paging-->
+    <!--          paging-->
+    <nav class="blog-pagination d-flex justify-content-center py-3">
+      <ul class="pagination">
+        <li class="page-item px-1">
+          <a (click)="previousPage()" [class.disabled]="currentPage<=0" class="page-link">Previous</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link">
+            <span>{{currentPage + 1}}</span>
+            <span>/</span>
+            <span>{{totalPages}}</span>
+          </a>
+        </li>
+        <li class="page-item px-1">
+          <a class="page-link" (click)="nextPage()" [class.disabled]="currentPage+1>=totalPages">Next</a>
+        </li>
+      </ul>
+    </nav>
+    <!--          paging-->
   </div>
 
 </section>

@@ -29,8 +29,9 @@ export class BenXeService {
     return this.http.patch<BenXe>(`${API_URL_JAVA}/ben-xe/update/${id}`, benXe);
   }
 
-  getListAndSearch(loaiXe: any, tenNhaXe: any): Observable<BenXe[]> {
-    return this.http.get<BenXe[]>(`${API_URL_JAVA}/ben-xe/list?loaiXe=${loaiXe}&tenNhaXe=${tenNhaXe}`);
+  getListAndSearch(request): Observable<BenXe[]> {
+    const params = request;
+    return this.http.get<BenXe[]>(`${API_URL_JAVA}/ben-xe/list`, {params});
   }
 
   createBenXe(benXe: any): Observable<BenXe> {
