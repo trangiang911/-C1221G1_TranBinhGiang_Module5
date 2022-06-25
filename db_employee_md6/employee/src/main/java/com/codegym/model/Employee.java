@@ -16,7 +16,7 @@ public class Employee {
     @Column(columnDefinition = "DATE")
     private String employeeDateStart;
     @OneToOne
-    private Users users;
+    private Users employeeUsername;
     private String employeeNote;
     @Column(columnDefinition = "BIT")
     private boolean flag;
@@ -75,12 +75,12 @@ public class Employee {
         this.employeeDateStart = employeeDateStart;
     }
 
-    public Users getUsers() {
-        return users;
+    public Users getEmployeeUsername() {
+        return employeeUsername;
     }
 
-    public void setUsers(Users users) {
-        this.users = users;
+    public void setEmployeeUsername(Users employeeUsername) {
+        this.employeeUsername = employeeUsername;
     }
 
     public String getEmployeeNote() {
